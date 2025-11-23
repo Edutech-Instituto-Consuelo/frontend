@@ -13,7 +13,7 @@ export function BaseTextarea(props: IProps) {
     return (
         <textarea { ...{
             ...props,
-            className: styles(),
+            className: styles({ className: props.className }),
         } } />
     );
 }

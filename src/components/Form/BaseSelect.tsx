@@ -18,7 +18,7 @@ export function BaseSelect(props: IProps) {
         <select { ...{
             ...props,
             name: props.name ?? props.id,
-            className: styles(),
+            className: styles({ className: props.className }),
         } }>
             <option value={undefined}>Selecione</option>
             { props.options.map((option) => (

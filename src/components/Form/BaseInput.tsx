@@ -20,7 +20,7 @@ export function BaseInput(props: IProps) {
         <input { ...{
             ...props,
             name: props.name ?? props.id,
-            className: styles({ typeInput: props.type as IProps["typeInput"] }),
+            className: styles({ typeInput: props.type as IProps["typeInput"], className: props.className }),
         } } />
     );
 }

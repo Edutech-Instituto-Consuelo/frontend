@@ -9,7 +9,7 @@ export function FieldLabel(props: ComponentProps<"label">) {
     return (
         <label { ...{
             ...props,
-            className: styles(),
+            className: styles({ className: props.className }),
         } } />
     );
 }
