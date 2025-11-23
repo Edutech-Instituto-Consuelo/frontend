@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const styles = tv({
-    base: `bg-[#F3F3F5] py-1 px-3 h-9 w-full rounded-lg placeholder:text-sm placeholder:text-[#717182] placeholder:font-normal cursor-pointer`,
+    base: `base-input placeholder`,
     variants: {
         typeInput: {
             radio: "h-3.5",
