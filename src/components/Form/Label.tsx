@@ -5,7 +5,7 @@ const styles = tv({
     base: "text-sm text-[#0A0A0A] font-normal"
 });
 
-export function FieldLabel(props: ComponentProps<"label">) {
+export function Label(props: ComponentProps<"label">) {
     return (
         <label { ...{
             ...props,
