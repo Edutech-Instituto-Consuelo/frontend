@@ -5,8 +5,8 @@ const styles = tv({
     base: `base-input placeholder`,
     variants: {
         typeInput: {
-            radio: "h-3.5",
-            checkbox: "h-3.5",
+            radio: "h-4 w-4 col-start-1 row-start-1",
+            checkbox: "h-4 w-4 col-start-1 row-start-1",
         },
     },
 });
