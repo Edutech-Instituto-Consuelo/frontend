@@ -16,7 +16,7 @@ interface IPropsFormField extends ComponentProps<'div'> {
 
 export function FormField(props: IPropsFormField) {
   return (
-    <div { ...{ 
+    <div { ...{
         ...props,
         className: styles({ className: props.className, inline: props.inline })
     } }>

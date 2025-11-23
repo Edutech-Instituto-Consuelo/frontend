@@ -17,7 +17,7 @@ interface IPropsSelect extends ComponentProps<typeof BaseTextarea> {
 export function Textarea(props: IPropsSelect) {
     return (
         <FormField className={props.classNames?.formField}>
-            <Label htmlFor={props.id} className={props.classNames?.label}>{props.label}</Label>
+            <Label htmlFor={props.id} className={props.classNames?.label} required={props.required}>{props.label}</Label>
 
             <BaseTextarea { ...{
                 ...props,

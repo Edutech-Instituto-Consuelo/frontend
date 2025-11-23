@@ -19,7 +19,7 @@ export function Input(props: IPropsInput) {
 
     return (
         <FormField inline={inline} className={props.classNames?.formField}>
-            <Label htmlFor={props.id} className={props.classNames?.label}>{props.label}</Label>
+            <Label htmlFor={props.id} className={props.classNames?.label} required={props.required}>{props.label}</Label>
 
             <BaseInput { ...{
                 ...props,
