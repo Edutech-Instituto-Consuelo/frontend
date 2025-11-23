@@ -1,18 +1,26 @@
+import type { ComponentProps } from "react";
 import { tv } from "tailwind-variants";
 
 const styles = tv({
-    base: "grid auto-rows-auto gap-2",
+    base: "grid auto-rows-auto gap-2 w-full",
     variants: {
         inline: {
-            true: "grid-cols-[auto_1fr] items-center gap-x-6",
+            true: "grid-cols-[auto_1fr] items-center gap-x-4",
         },
     }
 });
 
-export function FormField({ children, className } : { children: React.ReactNode, className?: string }) {
+interface IPropsFormField extends ComponentProps<'div'> {
+    inline?: boolean;
+}
+
+export function FormField(props: IPropsFormField) {
   return (
-    <div className={styles({ className })}>
-        { children }
+    <div { ...{ 
+        ...props,
+        className: styles({ className: props.className, inline: props.inline })
+    } }>
+        { props.children }
     </div>
   );
 }
