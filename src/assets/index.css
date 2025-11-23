@@ -2,7 +2,7 @@
 
 @layer components {
     .base-input {
-        @apply bg-[#F3F3F5] py-1 px-3 h-9 w-full rounded-lg cursor-pointer;
+        @apply bg-[#F3F3F5] accent-black py-1 px-3 h-9 w-full rounded-lg cursor-pointer;
     };
     .placeholder {
         @apply placeholder:text-sm placeholder:text-[#717182] placeholder:font-normal;
