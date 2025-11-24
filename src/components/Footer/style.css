@@ -1,0 +1,117 @@
+/* Reset básico para garantir consistência */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  background-color: #f9fafb;
+  border-top: 1px solid #0000001a;
+  width: 100%;
+  font-family: "Arimo", Helvetica, Arial, sans-serif;
+  padding: 60px 20px 20px; 
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Área superior com as colunas */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Permite quebrar linha no mobile */
+  gap: 40px;
+}
+
+/* Estilos da Coluna da Marca (Logo) */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 300px;
+  flex: 1 1 250px; 
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
+  align-self: flex-start;
+}
+
+.footer-description {
+  color: #495565;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Estilos das Colunas de Links */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 150px;
+}
+
+.footer-heading {
+  color: #0a0a0a;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #495565;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #0a0a0a;
+}
+
+/* Área inferior (Copyright) */
+.footer-bottom {
+  border-top: 1px solid #0000001a;
+  padding-top: 32px;
+  display: flex;
+  justify-content: center /* Centraliza o texto */
+  align-items: center;
+}
+
+.copyright-text {
+  color: #495565;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Empilha tudo verticalmente */
+    gap: 32px;
+  }
+
+  .footer-brand {
+    max-width: 100%; /* Ocupa largura total no mobile */
+  }
+
+  .footer-bottom {
+    padding-top: 24px;
+  }
+}
