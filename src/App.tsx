@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer/footer";
 
 export default function App() {
     return (
@@ -14,6 +15,7 @@ export default function App() {
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            <Footer />
         </div>
     );
 }
