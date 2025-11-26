@@ -21,7 +21,7 @@ export default function Navbar() {
             </Link>
 
             <div className="flex justify-end items-center gap-4">
-                <Link to="/explorar" className="hidden md:inline">Explorar Cursos</Link> {/*//! O LINK DEVE SER ESTILIZADO */}
+                <Link to="/explorar" className="hidden md:inline link-black">Explorar Cursos</Link> {/*//! O LINK DEVE SER ESTILIZADO */}
                 <Button variant="secondary">Entrar</Button>
                 <Button>Cadastre-se</Button>
             </div>
