@@ -78,6 +78,14 @@
       cursor: pointer;
     }
   }
+
+  .base-input {
+      @apply bg-[#F3F3F5] text-[#0A0A0A] accent-black py-1 px-3 h-9 w-full rounded-lg cursor-pointer;
+  };
+
+  .placeholder {
+      @apply placeholder:text-sm placeholder:text-[#717182] placeholder:font-normal;
+  }
 }
 
 :root {
