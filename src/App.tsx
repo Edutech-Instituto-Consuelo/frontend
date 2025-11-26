@@ -3,17 +3,21 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
+import Navbar from "./components/Navbar";
 
 export default function App() {
     return (
-        <div>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+        <>
+            <Navbar />
+            <div className="pt-navbar">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
 
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </div>
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </div>
+        </>
     );
 }
