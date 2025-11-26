@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { tv } from "tailwind-variants";
 import simbolo from "../assets/simbolo_black.svg";
 import logo from "../assets/logo_black.svg";
+import { Button } from "./Button";
 
 const styles = tv({
     slots: {
@@ -21,9 +22,8 @@ export default function Navbar() {
 
             <div className="flex justify-end items-center gap-4">
                 <Link to="/explorar" className="hidden md:inline">Explorar Cursos</Link> {/*//! O LINK DEVE SER ESTILIZADO */}
-                {/*//! OS BOTOES DEVE SER SUBTITUIDOS PELO COMPONENTE DE BOTAO CORRETO */}
-                <button className="border border-solid border-black py-1 px-4">Entrar</button>
-                <button className="border border-solid border-black py-1 px-4">Cadastre-se</button>
+                <Button variant="secondary">Entrar</Button>
+                <Button>Cadastre-se</Button>
             </div>
         </nav>
     );
