@@ -1,23 +1,39 @@
 import type { ComponentProps } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
-const styles = tv({
-    base: "py-2 px-4 rounded-lg font-medium",
-    variants: {
-        background: {
-            pink: "bg-pink-500 text-white hover:bg-pink-600",
-            blue: "bg-blue-500 text-white hover:bg-blue-600",
-        },
-        disabled: {
-            true: "bg-gray-500 text-white hover:bg-gray-600 opacity-50 cursor-not-allowed",
-        }
-    }
-})
+// Usei o tailwind-variants pra organizar as variações de estilo de forma limpa
+const buttonStyles = tv({
+  base: "py-1.5 px-4 rounded-lg font-normal transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer",
+  
+  variants: {
+    variant: {
+      primary: "bg-black text-white hover:bg-gray-800 border border-transparent",
+      secondary: "bg-white text-gray-900 border border-gray-300 hover:bg-gray-50",
+      accent: "bg-blue-600 text-white hover:bg-blue-700 border border-transparent",
+    },
+    fullWidth: {
+      true: "w-full",
+      false: "w-auto",
+    },
+  },
+  
+  defaultVariants: {
+    variant: "primary",
+    fullWidth: false,
+  },
+});
 
-interface IProps extends ComponentProps<'button'>, VariantProps<typeof styles> {}
+// Tipagem pro TypeScript reconhecer as variantes no autocomplete
+type ButtonSchema = VariantProps<typeof buttonStyles>;
+interface ButtonProps extends ComponentProps<'button'>, ButtonSchema {}
 
-export function Button(props: IProps) {
-    return (
-        <button { ...props }>{ props.children }</button>
-    );
+export function Button({ className, variant, fullWidth, ...props }: ButtonProps) {
+  return (
+    <button 
+      className={buttonStyles({ variant, fullWidth, className })} 
+      {...props} 
+    >
+      {props.children}
+    </button>
+  );
 }
