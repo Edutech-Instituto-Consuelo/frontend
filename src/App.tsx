@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 
 export default function App() {
     return (
-        <div>
+        <>
             <Navbar />
             <div className="pt-18">
                 <Routes>
@@ -18,6 +18,6 @@ export default function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
-        </div>
+        </>
     );
 }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 
-@layer theme {
+@theme {
   --breakpoint-xs: 480px;
   --color-blue:#155DFC;
   --color-black:#231F20;
