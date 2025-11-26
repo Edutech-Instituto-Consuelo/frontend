@@ -4,7 +4,7 @@ import logoImg from "../../assets/logo_black.svg";
 
 const footer = tv({
   slots: {
-    root: "bg-gray-50 border-t border-gray-200 w-full py-15 px-5",
+    root: "bg-gray-50 border-t border-gray-200 w-full py-8 px-5",
     container: "max-w-[1200px] mx-auto w-full flex flex-col gap-12",
     content: "flex justify-between items-start flex-wrap gap-10",
     brand: "flex flex-col gap-4 max-w-[300px] flex-1 min-w-[250px]",
