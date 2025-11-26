@@ -1,7 +1,65 @@
 @import "tailwindcss";
+@theme  {
+  --color-blue:#155DFC;
+  --color-black:#231F20;
+  --color-dark-black:#0A0A0A;
+  --color-dark-gray:#4A5565;
+  --color-white:#FFFFFF;
+  --color-black-gray:#0000001A;
+  --color-yellow:#FDC700;
+  --color-light-gray:#C4C4C4;
+  --color-off-white:#E5E7EB;
+  --color-dar-kblue:#030213;
+  --color-lead-gray:#717182;
+  --color-cold-gray:#99A1AF;
+  --color-light-white:#F9FAFB;
+  --color-black-white:#00000000;
+  --color-linear-off-white:#EFF6FF;
+  --color-linear-white:#FFFFFF;
+  --color-linear-light-white:#F3F3F5;
+}
+
+@layer componets  {
+  .h1 {
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 42px; /* 100% */
+    }
+  .text {
+    color: #717182;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28.433px; /* 162.476% */
+    }
+  .black-text {
+    color: #0A0A0A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    }
+  .link {
+    color: #155DFC;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    &:hover {
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    }
+  }
+}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arimo sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
