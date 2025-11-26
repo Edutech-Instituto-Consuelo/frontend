@@ -20,6 +20,7 @@
   --color-linear-off-white:#EFF6FF;
   --color-linear-white:#FFFFFF;
   --color-linear-light-white:#F3F3F5;
+  --spacing-navbar: 4.25rem;
 }
 
 @layer components {
