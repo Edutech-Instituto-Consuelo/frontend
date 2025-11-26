@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { tv } from "tailwind-variants";
-import logoImg from "../../assets/logo.png";
+import logoImg from "../../assets/logo_black.svg";
 
 const footer = tv({
   slots: {
