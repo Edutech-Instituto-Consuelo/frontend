@@ -1,15 +1,24 @@
-import React from 'react';
-import type { CardComponentProps } from './Card.types';
+import type { ComponentProps } from "react";
+import { tv, type VariantProps } from "tailwind-variants";
 
-const CardImage: React.FC<CardComponentProps> = ({ children, className = '' }) => {
-  
-  const baseClasses = 'w-full h-[224px] rounded-t-[8px] overflow-hidden object-cover';
-  
+const cardImageStyles = tv({
+  base: "w-full h-56 object-cover rounded-t-lg",
+});
+
+type CardImageSchema = VariantProps<typeof cardImageStyles>;
+
+interface CardImageProps extends ComponentProps<'img'>, CardImageSchema {
+  src: string;
+  alt: string;
+}
+
+export function CardImage({ className, src, alt, ...props }: CardImageProps) {
   return (
-    <div className={`${baseClasses} ${className}`}>
-      {children}
-    </div>
+    <img 
+      src={src}
+      alt={alt}
+      className={cardImageStyles({ className })} 
+      {...props}
+    />
   );
-};
-
-export default CardImage;
+}
