@@ -1,49 +1,46 @@
-import React from 'react';
-import type { CardComponentProps } from './Card.types';
+import type { ComponentProps } from "react";
+import { tv, type VariantProps } from "tailwind-variants";
 
-interface CardProgressProps extends CardComponentProps {
-  value: number;
-  progressText?: string; 
+const cardProgressStyles = tv({
+  base: "px-4 pb-4 pt-2",
+});
+
+type CardProgressSchema = VariantProps<typeof cardProgressStyles>;
+
+interface CardProgressProps extends ComponentProps<'div'>, CardProgressSchema {
+  progress: number;
+  progressText?: string;
 }
 
-const CardProgress: React.FC<CardProgressProps> = ({ 
-  value, 
-  progressText, 
+export function CardProgress({ 
+  className, 
   children, 
-  className = '' 
-}) => {
+  progress, 
+  progressText, 
+  ...props 
+}: CardProgressProps) {
   
-  const baseClasses = 'px-[14px] pb-[14px] pt-2';
-  
-  const safeValue = Math.min(100, Math.max(0, value));
-
-  const progressColor = '#030213';
-  const progressBgColor = '--color-off-white-bg';
+  const safeProgress = Math.min(100, Math.max(0, progress));
 
   return (
-    <div className={`${baseClasses} ${className}`}>
+    <div className={cardProgressStyles({ className })} {...props}>
+      
+      <div className="flex justify-between items-center text-sm mb-2">
+        <span className="text-dark-gray">Progresso</span>
         
-        <div className="flex justify-between items-center text-sm mb-2">
-            <span className="text-dark-gray">Progresso</span>
-            
-            <span className="font-semibold text-blue">
-                {progressText || `${safeValue}% Completo`}
-            </span> 
-        </div>
+        <span className="font-semibold text-blue">
+          {progressText || `${safeProgress}% Completo`}
+        </span>
+      </div>
 
-        <div className={`h-2 rounded-full bg-[var(${progressBgColor})]`}>
-            <div 
-                className="h-full rounded-full" 
-                style={{ 
-                    width: `${safeValue}%`,
-                    backgroundColor: progressColor 
-                }}
-            ></div>
-        </div>
-        
-        {children} 
+      <div className="h-2 rounded-full bg-off-white">
+        <div 
+          className="h-full rounded-full bg-dark-kblue transition-all duration-300" 
+          style={{ width: `${safeProgress}%` }}
+        />
+      </div>
+      
+      {children}
     </div>
   );
-};
-
-export default CardProgress;
+}
