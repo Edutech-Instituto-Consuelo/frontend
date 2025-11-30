@@ -1,14 +1,18 @@
-import React from 'react';
-import type { CardComponentProps } from './Card.types';
+import type { ComponentProps } from "react";
+import { tv, type VariantProps } from "tailwind-variants";
 
-const CardBody: React.FC<CardComponentProps> = ({ children, className = '' }) => {
-    const baseClasses = 'px-[14px] py-[14px] space-y-4';
-  
+const cardBodyStyles = tv({
+  base: "px-4 pt-4 space-y-1",
+});
+
+type CardBodySchema = VariantProps<typeof cardBodyStyles>;
+
+interface CardBodyProps extends ComponentProps<'div'>, CardBodySchema {}
+
+export function CardBody({ className, children, ...props }: CardBodyProps) {
   return (
-    <div className={`${baseClasses} ${className}`}>
+    <div className={cardBodyStyles({ className })} {...props}>
       {children}
     </div>
   );
-};
-
-export default CardBody;
+}
