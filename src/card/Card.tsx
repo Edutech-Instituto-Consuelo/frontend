@@ -1,37 +1,30 @@
-import React from 'react';
+import type { ComponentProps } from "react";
+import { tv, type VariantProps } from "tailwind-variants";
 
-import CardHeader from './CardHeader';
-import CardBody from './CardBody';
-import CardImage from './CardImage';
-import CardProgress from './CardProgress'; 
+import { CardHeader } from './CardHeader';
+import { CardBody } from './CardBody';
+import { CardImage } from './CardImage';
+import { CardProgress } from './CardProgress';
 
-interface CardProps {
-  children: React.ReactNode;
-  className?: string;
-}
+const cardStyles = tv({
+  base: "bg-white rounded-lg shadow-md overflow-hidden",
+});
 
-interface CardCompoundProps extends React.FC<CardProps> {
-  Header: typeof CardHeader;
-  Body: typeof CardBody;
-  Image: typeof CardImage;
-  Progress: typeof CardProgress;
-}
+type CardSchema = VariantProps<typeof cardStyles>;
 
-const CardBase: React.FC<CardProps> = ({ children, className = '' }) => {
-  
-  const baseClasses = 'bg-white rounded-[14px] shadow-lg overflow-hidden';
+interface CardProps extends ComponentProps<'div'>, CardSchema {}
 
+function CardBase({ className, children, ...props }: CardProps) {
   return (
-    <div className={`${baseClasses} ${className}`}>
+    <div className={cardStyles({ className })} {...props}>
       {children}
     </div>
   );
-};
+}
 
-const Card = CardBase as CardCompoundProps;
-Card.Header = CardHeader;
-Card.Body = CardBody;
-Card.Image = CardImage;
-Card.Progress = CardProgress;
-
-export default Card;
+export const Card = Object.assign(CardBase, {
+  Header: CardHeader,
+  Body: CardBody,
+  Image: CardImage,
+  Progress: CardProgress,
+});
