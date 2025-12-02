@@ -43,7 +43,7 @@ interface CardPriceProps extends ComponentProps<'span'> {
 
 export function CardPrice({ value, className, ...props }: CardPriceProps) {
   
-  const valorFormatado = new Intl.NumberFormat('pt-BR', {
+  const valorFormatado = !value ? "Grátis" : new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
   }).format(value);

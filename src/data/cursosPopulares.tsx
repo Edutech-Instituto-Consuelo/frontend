@@ -26,7 +26,7 @@ const cursosPopulares: Curso[] = [
         imagem: "https://www.cursosrapidosgratis.com.br/site/seo/img/cursos-online.jpg",
         avaliacao: 4.7,
         numeroAvaliacoes: 2094,
-        preco: 54.99
+        preco: 0
 
     },
 
