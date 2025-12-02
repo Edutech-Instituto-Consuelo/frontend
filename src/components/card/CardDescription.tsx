@@ -4,7 +4,7 @@ import { Star } from 'lucide-react';
 
 // card para instrutor do curso
 const authorStyles = tv({
-  base: "text-sm text-zinc-500",
+  base: "text-sm text-dark-gray",
 });
 
 export function CardAuthor({ className, ...props }: ComponentProps<'p'>) {
@@ -24,17 +24,17 @@ interface CardRatingProps extends ComponentProps<'div'> {
 export function CardRating({ rating, reviews, className, ...props }: CardRatingProps) {
   return (
     <div className={ratingStyles({ className })} {...props}>
-      <Star size={16} className="text-yellow-500 fill-yellow-500" />
+      <Star size={16} className="text-yellow fill-yellow" />
       
-      <span className="font-bold text-dark-black">{rating}</span>
-      <span className="text-zinc-400">({reviews})</span>
+      <span className="font-normal text-dark-black">{rating}</span>
+      <span className="text-dark-gray">({reviews})</span>
     </div>
   );
 }
 
 // card para preço do curso
 const priceStyles = tv({
-  base: "font-bold text-lg text-blue-600 mt-auto",
+  base: "font-normal text-lg text-blue mt-auto",
 });
 
 interface CardPriceProps extends ComponentProps<'span'> {
