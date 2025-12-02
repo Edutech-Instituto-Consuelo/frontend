@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import { tv } from "tailwind-variants";
-import { Star } from 'lucide-react'; 
+import { LuStar } from 'react-icons/lu'; 
 
 // card para instrutor do curso
 const authorStyles = tv({
@@ -24,8 +24,8 @@ interface CardRatingProps extends ComponentProps<'div'> {
 export function CardRating({ rating, reviews, className, ...props }: CardRatingProps) {
   return (
     <div className={ratingStyles({ className })} {...props}>
-      <Star size={16} className="text-yellow fill-yellow" />
-      
+      <LuStar className="text-base text-yellow fill-yellow" />
+
       <span className="font-normal text-dark-black">{rating}</span>
       <span className="text-dark-gray">({reviews})</span>
     </div>
