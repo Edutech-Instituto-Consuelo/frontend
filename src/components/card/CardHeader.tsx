@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const cardHeaderStyles = tv({
-  base: "px-4 py-4 space-y-1",
+  base: "px-1 py-1 space-y-2",
 });
 
 type CardHeaderSchema = VariantProps<typeof cardHeaderStyles>;
