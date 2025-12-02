@@ -4,6 +4,7 @@ import { Button } from "@/components/Button";
 import { Input } from "@/components/Form/Input";
 import { PasswordStrength } from "./PasswordStrength";
 import type { RegisterFormData } from "../hooks/useRegisterForm";
+import { ContainerInputs, FormField, Label } from "@/components/Form";
 
 interface RegisterFormProps {
   form: UseFormReturn<RegisterFormData>;
@@ -21,98 +22,92 @@ export function RegisterForm({ form, onSubmit, onOpenTerms }: RegisterFormProps)
   const formErrors = errors as unknown as Record<string, Record<string, string>>;
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
-      <Input
-        id="name"
-        label="Nome Completo"
-        placeholder="Digite seu nome completo"
-        {...register("name")}
-        errors={formErrors}
-      />
-
-      <Input
-        id="email"
-        type="email"
-        label="Email"
-        placeholder="seu@email.com"
-        {...register("email")}
-        errors={formErrors}
-      />
-
-      <div>
+    <form onSubmit={onSubmit}>
+      <ContainerInputs>
         <Input
-          id="password"
-          type="password"
-          label="Senha"
-          placeholder="••••••••"
-          {...register("password")}
+          id="name"
+          label="Nome Completo"
+          placeholder="Digite seu nome completo"
+          {...register("name")}
           errors={formErrors}
         />
-        <PasswordStrength password={passwordValue} />
-      </div>
 
-      <Input
-        id="confirmPassword"
-        type="password"
-        label="Confirmar Senha"
-        placeholder="••••••••"
-        {...register("confirmPassword")}
-        errors={formErrors}
-      />
+        <Input
+          id="email"
+          type="email"
+          label="Email"
+          placeholder="seu@email.com"
+          {...register("email")}
+          errors={formErrors}
+        />
 
-      <div className="space-y-3">
-        <p className="text-sm font-medium text-gray-700">Eu sou...</p>
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center">
-            <Input
-              id="role-student"
-              type="radio"
-              label="Estudante"
-              value="student"
-              {...register("role")}
-            />
-          </div>
-          <div className="flex items-center">
-            <Input
-              id="role-teacher"
-              type="radio"
-              label="Professor"
-              value="teacher"
-              {...register("role")}
-            />
-          </div>
+        <div>
+          <Input
+            id="password"
+            type="password"
+            label="Senha"
+            placeholder="••••••••"
+            {...register("password")}
+            errors={formErrors}
+          />
+          <PasswordStrength password={passwordValue} />
         </div>
-      </div>
 
-      <div className="flex items-start gap-2 pt-2">
-        <input
+        <Input
+          id="confirmPassword"
+          type="password"
+          label="Confirmar Senha"
+          placeholder="••••••••"
+          {...register("confirmPassword")}
+          errors={formErrors}
+        />
+
+        <FormField>
+          <Label htmlFor="">Eu sou...</Label>
+          <Input
+            id="role-student"
+            type="radio"
+            label="Estudante"
+            value="student"
+            {...register("role")}
+          />
+
+          <Input
+            id="role-teacher"
+            type="radio"
+            label="Professor"
+            value="teacher"
+            {...register("role")}
+          />
+        </FormField>
+
+        <Input
           type="checkbox"
           id="acceptedTerms"
-          className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+          label={
+            <>
+                Li e concordo com os{" "}
+                <button
+                  type="button"
+                  onClick={onOpenTerms}
+                  className="text-blue hover:underline cursor-pointer"
+                >Termos de Uso</button>{" "}
+                e Política de Privacidade.
+            </>
+          }
           {...register("acceptedTerms")}
         />
-        <label htmlFor="acceptedTerms" className="text-sm text-gray-600 cursor-pointer">
-          Li e concordo com os{" "}
-          <button
-            type="button"
-            onClick={onOpenTerms}
-            className="text-blue-600 hover:underline font-medium"
-          >
-            Termos de Uso
-          </button>{" "}
-          e Política de Privacidade.
-        </label>
-      </div>
-      {errors.acceptedTerms && (
-        <p className="text-xs text-red-500 mt-1">{errors.acceptedTerms.message}</p>
-      )}
 
-      <div className="space-y-3 pt-2">
+        {errors.acceptedTerms && (
+          <p className="text-xs text-red-500 mt-1">{errors.acceptedTerms.message}</p>
+        )}
+
         <Button fullWidth type="submit">Criar Conta</Button>
+
         <Button fullWidth variant="secondary" type="button" onClick={() => navigate("/")}>
           Voltar
         </Button>
-      </div>
+      </ContainerInputs>
     </form>
   );
 }
