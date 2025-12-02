@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const cardBodyStyles = tv({
-  base: "px-4 pt-4 pb-6 space-y-2",
+  base: "grid gap-2 p-4 pb-8",
 });
 
 type CardBodySchema = VariantProps<typeof cardBodyStyles>;
