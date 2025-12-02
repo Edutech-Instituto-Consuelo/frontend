@@ -12,13 +12,12 @@ interface CardImageProps extends ComponentProps<'img'>, CardImageSchema {
   alt: string;
 }
 
-export function CardImage({ className, src, alt, ...props }: CardImageProps) {
+export function CardImage({ className, ...props }: CardImageProps) {
   return (
-    <img 
-      src={src}
-      alt={alt}
-      className={cardImageStyles({ className })} 
-      {...props}
+    <img { ...{
+      ...props,
+      className: cardImageStyles({ className }),
+    } }
     />
   );
 }
