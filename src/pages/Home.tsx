@@ -1,5 +1,5 @@
 import cursosPopulares from "@/data/cursosPopulares";
-import { Card } from "@/components/card/index";
+import { Card } from "@/components/Card/index";
 
 export default function Home() {
   return (
