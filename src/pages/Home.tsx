@@ -1,11 +1,11 @@
 import cursosPopulares from "@/data/cursosPopulares";
-import { Card } from "@/components/card/index";
+import { Card } from "@/components/Card/index";
 
 export default function Home() {
   return (
     <div>
-      <section className="py-12 px-4 md:px-8">
-        <h2 className="text-base font-normal mb-6 text-dark-black">
+      <section className="py-12 px-4 md:px-8 mx-auto max-w-[1300px]">
+        <h2 className="text-base font-normal mb-6 text-neutral-900">
           🔥 Cursos Populares
         </h2>
 

@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 const styles = tv({
-    base: "text-xs text-red-500 ml-1",
+    base: "text-xs text-red ml-1",
 });
 
 export function FieldError({ message="", className }: { message: string, className?: string }) {
