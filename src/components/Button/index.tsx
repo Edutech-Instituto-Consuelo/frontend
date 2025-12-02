@@ -3,13 +3,13 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 // Usei o tailwind-variants pra organizar as variações de estilo de forma limpa
 const buttonStyles = tv({
-  base: "py-1.5 px-4 rounded-lg font-normal transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer",
+  base: "py-1.5 px-4 rounded-lg font-normal border border-solid transition-all duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer",
   
   variants: {
     variant: {
-      primary: "bg-black text-white hover:bg-gray-800 border border-transparent",
-      secondary: "bg-white text-gray-900 border border-gray-300 hover:bg-gray-50",
-      accent: "bg-blue-600 text-white hover:bg-blue-700 border border-transparent",
+      primary: "bg-neutral-900 hover:bg-gray text-white border-transparent",
+      secondary: "bg-white hover:bg-neutral-200 text-neutral-900 border-overlay hover:border-neutral-200",
+      accent: "bg-blue hover:bg-blue-500 text-white border-transparent",
     },
     fullWidth: {
       true: "w-full",

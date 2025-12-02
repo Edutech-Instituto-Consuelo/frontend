@@ -4,7 +4,7 @@ import { LuStar } from 'react-icons/lu';
 
 // card para instrutor do curso
 const authorStyles = tv({
-  base: "text-sm text-dark-gray",
+  base: "text",
 });
 
 export function CardAuthor({ className, ...props }: ComponentProps<'p'>) {
@@ -34,7 +34,7 @@ export function CardRating({ rating, reviews, className, ...props }: CardRatingP
 
 // card para preço do curso
 const priceStyles = tv({
-  base: "font-normal text-lg text-blue mt-auto",
+  base: "font-normal text-base text-blue mt-auto",
 });
 
 interface CardPriceProps extends ComponentProps<'span'> {

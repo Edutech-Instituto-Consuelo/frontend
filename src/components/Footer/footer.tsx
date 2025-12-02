@@ -4,18 +4,18 @@ import logoImg from "../../assets/logo_black.svg";
 
 const footer = tv({
   slots: {
-    root: "bg-gray-50 border-t border-gray-200 w-full py-8 px-5",
+    root: "bg-neutral-25 border-t border-overlay w-full py-8 px-5",
     container: "max-w-[1200px] mx-auto w-full flex flex-col gap-12",
     content: "flex justify-between items-start flex-wrap gap-10",
     brand: "flex flex-col gap-4 max-w-[300px] flex-1 min-w-[250px]",
-    logo: "h-7 w-auto self-start",
-    description: "text-gray-600 text-sm leading-5",
+    logo: "h-8 w-auto self-start",
+    description: "text-neutral-600 text-sm leading-5",
     column: "flex flex-col gap-4 min-w-[150px]",
-    heading: "text-gray-900 text-base font-semibold leading-6",
-    linkList: "flex flex-col gap-3",
-    link: "text-gray-600 text-sm hover:text-gray-900 transition-colors",
-    bottom: "border-t border-gray-200 pt-8 flex justify-center items-center",
-    copyright: "text-gray-600 text-sm text-center",
+    heading: "text-neutral-900 text-base leading-6",
+    linkList: "flex flex-col gap-2",
+    link: "link-black text-sm transition-colors",
+    bottom: "border-t border-overlay pt-8 flex justify-center items-center",
+    copyright: "text-neutral-600 text-sm text-center",
   },
 });
 
