@@ -22,7 +22,7 @@ export default function Navbar() {
 
             <div className="flex justify-end items-center gap-4">
                 <Link to="/explorar" className="hidden md:inline link-black">Explorar Cursos</Link>
-                <Link to="/login"><Button variant="secondary">Entrar</Button></Link>
+                <Link to="/login"><Button variant="secondary" className="border-overlay">Entrar</Button></Link>
                 <Link to="/register"><Button>Cadastre-se</Button></Link>
             </div>
         </nav>
