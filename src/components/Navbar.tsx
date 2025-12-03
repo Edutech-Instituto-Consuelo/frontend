@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { tv } from "tailwind-variants";
-import simbolo from "../assets/simbolo_black.svg";
-import logo from "../assets/logo_black.svg";
+import simbolo from "@/assets/simbolo_black.svg";
+import logo from "@/assets/logo_black.svg";
 import { Button } from "./Button";
 
 const styles = tv({
