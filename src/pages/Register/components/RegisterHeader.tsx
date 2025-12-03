@@ -7,7 +7,7 @@ export function RegisterHeader() {
         <img src={simbolo} alt="Logo" className="h-12 w-auto" />
       </div>
 
-      <h2 className="text-base leading-6 text-neutral-900">Crie sua conta</h2>
+      <h2 className="text-lg leading-6 text-neutral-900">Crie sua conta</h2>
 
       <p className="text-sm text-neutral-600">
         Comece sua jornada de aprendizado hoje!
