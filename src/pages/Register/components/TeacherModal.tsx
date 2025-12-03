@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { LuClock4 } from "react-icons/lu";
 
 interface TeacherModalProps {
   isOpen: boolean;
@@ -14,9 +15,7 @@ export function TeacherModal({ isOpen, onClose }: TeacherModalProps) {
         
         {/* Ícone de Relógio/Espera */}
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-yellow-100 mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+          <LuClock4 className="text-[1.75rem] text-golden" />
         </div>
 
         <h3 className="text-xl black-text">
