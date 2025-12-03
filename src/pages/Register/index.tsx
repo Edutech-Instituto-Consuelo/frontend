@@ -28,8 +28,8 @@ export default function Register() {
   } = useRegisterForm();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-12">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-6 md:space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-neutral-50 px-4 py-12">
+      <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 md:p-10 space-y-6 md:space-y-8">
 
         {/* DECISÃO VISUAL: Mostra Sucesso ou Formulário */}
         {isSuccess ? (

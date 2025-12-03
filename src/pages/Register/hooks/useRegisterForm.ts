@@ -1,33 +1,18 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-// 1. SCHEMA DE VALIDAÇÃO (ZOD)
-const registerSchema = z.object({
-  name: z.string().min(1, "Campo obrigatório").refine((name) => name.trim().split(" ").length >= 2, "Digite seu nome completo (Nome e Sobrenome)"),
-  email: z.string().min(1, "Campo obrigatório").email("Formato de email inválido"),
-  password: z.string()
-    .min(6, "Mínimo 6 caracteres")
-    .regex(/[a-zA-Z]/, "Pelo menos uma letra")
-    .regex(/\d/, "Pelo menos um número")
-    .regex(/[!@#$%^&*(),.?":{}|<>]/, "Pelo menos um caractere especial"),
-  confirmPassword: z.string().min(1, "Confirmação obrigatória"),
-  role: z.enum(["student", "teacher"]),
-  acceptedTerms: z.boolean().refine((val) => val === true, {
-    message: "Você precisa aceitar os termos de uso",
-  }),
-}).refine((data) => data.password === data.confirmPassword, {
-  path: ["confirmPassword"],
-  message: "As senhas não coincidem",
-});
+// Importando o schema e o tipo que define a estrutura do formulário
+import { registerSchema, type RegisterFormData } from "../schemas/registerSchema";
 
-export type RegisterFormData = z.infer<typeof registerSchema>;
+// Re-exportando o tipo para que o componente visual (index.tsx) possa usar se precisar
+export type { RegisterFormData };
 
 export function useRegisterForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [showTeacherModal, setShowTeacherModal] = useState(false);
 
+  // Configuração do React Hook Form usando o schema importado
   const form = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -36,9 +21,11 @@ export function useRegisterForm() {
     },
   });
 
+  // Função de envio do formulário
   const onSubmit = (data: RegisterFormData) => {
-    console.log("Dados do formulário:", data);
+    console.log("Dados do formulário válidos:", data);
     
+    // Lógica de decisão: Professor -> Modal de aviso | Aluno -> Sucesso direto
     if (data.role === "teacher") {
       setShowTeacherModal(true);
     } else {
@@ -46,11 +33,12 @@ export function useRegisterForm() {
     }
   };
 
+  // Retorna tudo que a tela precisa para funcionar
   return {
     form,
     isSuccess,
     showTeacherModal,
     setShowTeacherModal,
-    onSubmit: form.handleSubmit(onSubmit),
+    onSubmit: form.handleSubmit(onSubmit), 
   };
 }
