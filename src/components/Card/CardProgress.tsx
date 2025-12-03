@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const cardProgressStyles = tv({
-  base: "px-4 pb-4 pt-2",
+  base: "grid gap-3",
 });
 
 type CardProgressSchema = VariantProps<typeof cardProgressStyles>;
@@ -25,17 +25,17 @@ export function CardProgress({
   return (
     <div className={cardProgressStyles({ className })} {...props}>
       
-      <div className="flex justify-between items-center text-sm mb-2">
-        <span className="text-dark-gray">Progresso</span>
+      <div className="flex justify-between items-center text">
+        <span>Progresso</span>
         
-        <span className="font-semibold text-blue">
+        <span className="text-blue">
           {progressText || `${safeProgress}% Completo`}
         </span>
       </div>
 
-      <div className="h-2 rounded-full bg-off-white">
+      <div className="h-2 rounded-full bg-neutral-950/20">
         <div 
-          className="h-full rounded-full bg-dark-kblue transition-all duration-300" 
+          className="h-full rounded-full bg-neutral-950 text transition-all duration-300" 
           style={{ width: `${safeProgress}%` }}
         />
       </div>

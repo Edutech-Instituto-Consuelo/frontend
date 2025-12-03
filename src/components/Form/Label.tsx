@@ -3,8 +3,8 @@ import { tv } from "tailwind-variants";
 
 const styles = tv({
     slots: {
-        label: "text-sm text-[#0A0A0A] font-normal cursor-pointer",
-        span: "text-red-500 ml-1",
+        label: "text-sm text-neutral-900 font-normal cursor-pointer",
+        span: "text-red ml-1",
     },
 });
 

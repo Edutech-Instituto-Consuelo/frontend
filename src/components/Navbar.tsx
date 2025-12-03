@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { tv } from "tailwind-variants";
-import simbolo from "../assets/simbolo_black.svg";
-import logo from "../assets/logo_black.svg";
+import simbolo from "@/assets/simbolo_black.svg";
+import logo from "@/assets/logo_black.svg";
 import { Button } from "./Button";
 
 const styles = tv({
     slots: {
-        navbar: "fixed flex justify-between items-center bg-white px-4 xs:px-[7.3vw] h-navbar w-full border-b border-black/10",
+        navbar: "fixed flex justify-between items-center bg-white px-4 xs:px-[7.3vw] h-navbar w-full border-b border-overlay",
     }
 });
 
@@ -22,7 +22,7 @@ export default function Navbar() {
 
             <div className="flex justify-end items-center gap-4">
                 <Link to="/explorar" className="hidden md:inline link-black">Explorar Cursos</Link>
-                <Link to="/login"><Button variant="secondary">Entrar</Button></Link>
+                <Link to="/login"><Button variant="secondary" className="border-overlay">Entrar</Button></Link>
                 <Link to="/register"><Button>Cadastre-se</Button></Link>
             </div>
         </nav>
