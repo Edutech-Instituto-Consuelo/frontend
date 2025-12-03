@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { useAuth } from "./hooks/useAuth";
 import logoBlack from "./assets/simbolo_black.svg";
+import { ToastContainer, Slide } from "react-toastify";
 
 export function PrivateRoute() {
     const { user, loading } = useAuth();
@@ -34,6 +35,19 @@ export function Layout() {
                 <Outlet />
             </main>
             <Footer />
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
+                theme="light"
+                transition={Slide}
+            />
         </div>
     );
 }
