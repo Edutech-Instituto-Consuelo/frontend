@@ -99,7 +99,7 @@ export function RegisterForm({ form, onSubmit, onOpenTerms }: RegisterFormProps)
         />
 
         {errors.acceptedTerms && (
-          <p className="text-xs text-red-500 mt-1">{errors.acceptedTerms.message}</p>
+          <p className="text-xs text-red mt-1">{errors.acceptedTerms.message}</p>
         )}
 
         <Button fullWidth type="submit">Criar Conta</Button>

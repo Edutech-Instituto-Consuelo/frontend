@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export function LoginLink() {
   return (
-    <p className="text-center text-sm text-gray-600">
+    <p className="text-center text-sm black-text">
       Já possui conta?{" "}
-      <Link 
-        to="/login" 
-        className="font-medium text-blue-600 hover:text-blue-500 hover:underline"
+      <Link
+        to="/login"
+        className="link"
       >
         Entrar
       </Link>
