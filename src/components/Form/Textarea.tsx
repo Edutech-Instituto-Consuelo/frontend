@@ -3,9 +3,10 @@ import { BaseTextarea } from "./BaseTextarea";
 import { FormField } from "./FormField";
 import { Label } from "./Label";
 import { FieldError } from "./FieldError";
+import type React from "react";
 
 interface IPropsSelect extends ComponentProps<typeof BaseTextarea> {
-    label: string;
+    label: React.ReactNode;
     errors?: Record<string, Record<string, string>>;
     classNames?: {
         formField?: string;
