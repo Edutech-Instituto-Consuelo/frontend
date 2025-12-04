@@ -3,9 +3,10 @@ import { BaseInput } from "./BaseInput";
 import { Label } from "./Label";
 import { FormField } from "./FormField";
 import { FieldError } from "./FieldError";
+import type React from "react";
 
 interface IPropsInput extends ComponentProps<typeof BaseInput> {
-    label: string;
+    label: React.ReactNode;
     errors?: Record<string, Record<string, string>>;
     classNames?: {
         formField?: string;
