@@ -4,9 +4,9 @@ import { apiConfig } from "./apiConfig";
 import type { IRequest, IRequestBody } from "./types";
 
 export const api = {
-    get: async ({ url, token, config, hiddenToast=false } : IRequest) => {
+    get: async ({ url, config, hiddenToast=false } : IRequest) => {
         try {
-            const response = await apiConfig(token).get(url, config);
+            const response = await apiConfig().get(url, config);
 
             !hiddenToast && toast.success(response.data?.message || response.statusText);
             return response.data;
@@ -15,9 +15,9 @@ export const api = {
         }
     },
 
-    post: async <T>({ url, token, body, config, hiddenToast=false } : IRequestBody<T>) => {
+    post: async <T>({ url, body, config, hiddenToast=false } : IRequestBody<T>) => {
         try {
-            const response = await apiConfig(token).post(url, body, config);
+            const response = await apiConfig().post(url, body, config);
 
             !hiddenToast && toast.success(response.data?.message || response.statusText);
             return response.data;
@@ -26,9 +26,9 @@ export const api = {
         }
     },
 
-    put: async <T>({ url, token, body, config, hiddenToast=false } : IRequestBody<T>) => {
+    put: async <T>({ url, body, config, hiddenToast=false } : IRequestBody<T>) => {
         try {
-            const response = await apiConfig(token).put(url, body, config);
+            const response = await apiConfig().put(url, body, config);
 
             !hiddenToast && toast.success(response.data?.message || response.statusText);
             return response.data;
@@ -37,9 +37,9 @@ export const api = {
         }
     },
 
-    patch: async <T>({ url, token, body, config, hiddenToast=false } : IRequestBody<T>) => {
+    patch: async <T>({ url, body, config, hiddenToast=false } : IRequestBody<T>) => {
         try {
-            const response = await apiConfig(token).patch(url, body, config);
+            const response = await apiConfig().patch(url, body, config);
 
             !hiddenToast && toast.success(response.data?.message || response.statusText);
             return response.data;
@@ -48,9 +48,9 @@ export const api = {
         }
     },
 
-    delete: async ({ url, token, config, hiddenToast=false } : IRequest) => {
+    delete: async ({ url, config, hiddenToast=false } : IRequest) => {
         try {
-            const response = await apiConfig(token).delete(url, config);
+            const response = await apiConfig().delete(url, config);
 
             !hiddenToast && toast.success(response.data?.message || response.statusText);
             return response.data;

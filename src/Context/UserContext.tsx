@@ -4,7 +4,6 @@ import { createContext, useEffect, useState } from "react";
 interface IUserStorage {
     nome: string;
     tipo_usuario: string;
-    token: string;
 }
 
 interface IUserContext {
@@ -42,7 +41,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         setLoading(true);
 
         try {
-            const responseAuth = await api.get({ url: '/auth/me', token });
+            const responseAuth = await api.get({ url: '/auth/me' });
             const user = responseAuth?.data;
 
             setUser({ ...user, token });
@@ -59,7 +58,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         setLoading(true);
 
         try {
-            const responseLogin = await api.post<typeof body>({ url: '/auth/login', body, token: ''});
+            const responseLogin = await api.post<typeof body>({ url: '/auth/login', body });
             const token = responseLogin?.data?.access_token;
 
             localStorage.setItem('token', token);
