@@ -1,10 +1,10 @@
 interface AuthContext {
-    user: {
-        role: string;
-    } | null;
-    loading: boolean;
+    tipo_usuario: string;
 }
 
-export function useAuth(): AuthContext {
-    return { user: null, loading: false };
+export function useAuth(): AuthContext|null {
+    const userLocal = localStorage.getItem('user');
+    const user = userLocal ? JSON.parse(userLocal) : null;
+
+    return user;
 }

@@ -6,20 +6,17 @@ import logoBlack from "./assets/simbolo_black.svg";
 import { ToastContainer, Slide } from "react-toastify";
 
 export function PrivateRoute() {
-    const { user, loading } = useAuth();
+    const user = useAuth();
     const location = useLocation();
-    const from = location.pathname || "/";
+    const from = location.pathname;
     const roleBasedPath = from.split("/")[1];
     const notProtectedRoutes = ["/", "/login", "/register", "/explorar"];
 
-    if (loading)
-        return <Loader />;
-
     if (user && (from === "/login" || from === "/register"))
-        return <Navigate to={"/"+user?.role} replace />;
+        return <Navigate to={"/"+user?.tipo_usuario} replace />;
 
-    if (user && roleBasedPath && user.role !== roleBasedPath)
-        return <Navigate to={"/"+user?.role} replace />;
+    if (user && roleBasedPath && user?.tipo_usuario !== roleBasedPath)
+        return <Navigate to={"/"+user?.tipo_usuario} replace />;
 
     if (!user && !notProtectedRoutes.includes(from))
         return <Navigate to="/login" replace state={{ from }} />;
