@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import logoBlack from "./assets/simbolo_black.svg";
@@ -9,8 +9,6 @@ export function PrivateRoute() {
     const { user, loading, isAuthenticated } = useUser();
     const role = user?.tipo_usuario;
 
-    const navigate = useNavigate();
-
     const from = useLocation().pathname;
     const roleBasedPath = from.split("/")[1] || "/";
     
@@ -20,10 +18,10 @@ export function PrivateRoute() {
         return <Loader />;
 
     if (!isAuthenticated && !notProtectedRoutes.includes(from))
-        navigate("/login", { replace: true });
+        return <Navigate to={"/login"} />;
 
     if (isAuthenticated && role !== roleBasedPath)
-        navigate("/"+role, { replace: true });
+        return <Navigate to={"/"+role} />;
 
     return <Layout />;
 }
