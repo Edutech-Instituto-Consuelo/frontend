@@ -1,10 +1,10 @@
 import { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import { apiConfig } from "./apiConfig";
-import type { IRequest } from "./types";
+import type { IRequest, IRequestBody } from "./types";
 
 export const api = {
-    get: async <T>({ url, token, config, hiddenToast=false } : IRequest<T>) => {
+    get: async ({ url, token, config, hiddenToast=false } : IRequest) => {
         try {
             const response = await apiConfig(token).get(url, config);
 
@@ -15,7 +15,7 @@ export const api = {
         }
     },
 
-    post: async <T>({ url, token, body, config, hiddenToast=false } : IRequest<T>) => {
+    post: async <T>({ url, token, body, config, hiddenToast=false } : IRequestBody<T>) => {
         try {
             const response = await apiConfig(token).post(url, body, config);
 
@@ -26,7 +26,7 @@ export const api = {
         }
     },
 
-    put: async <T>({ url, token, body, config, hiddenToast=false } : IRequest<T>) => {
+    put: async <T>({ url, token, body, config, hiddenToast=false } : IRequestBody<T>) => {
         try {
             const response = await apiConfig(token).put(url, body, config);
 
@@ -37,7 +37,7 @@ export const api = {
         }
     },
 
-    patch: async <T>({ url, token, body, config, hiddenToast=false } : IRequest<T>) => {
+    patch: async <T>({ url, token, body, config, hiddenToast=false } : IRequestBody<T>) => {
         try {
             const response = await apiConfig(token).patch(url, body, config);
 
@@ -48,7 +48,7 @@ export const api = {
         }
     },
 
-    delete: async <T>({ url, token, config, hiddenToast=false } : IRequest<T>) => {
+    delete: async ({ url, token, config, hiddenToast=false } : IRequest) => {
         try {
             const response = await apiConfig(token).delete(url, config);
 
