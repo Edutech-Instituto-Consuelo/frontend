@@ -2,25 +2,49 @@
 @import "tailwindcss";
 
 @theme {
+  /* breakpoint para telas de celular mais estreitas */
   --breakpoint-xs: 480px;
-  --color-blue:#155DFC;
-  --color-black:#231F20;
-  --color-dark-black:#0A0A0A;
-  --color-dark-gray:#4A5565;
-  --color-white:#FFFFFF;
-  --color-black-gray:#0000001A;
-  --color-yellow:#FDC700;
-  --color-light-gray:#C4C4C4;
-  --color-off-white:#E5E7EB;
-  --color-dar-kblue:#030213;
-  --color-lead-gray:#717182;
-  --color-cold-gray:#99A1AF;
-  --color-light-white:#F9FAFB;
-  --color-black-white:#00000000;
-  --color-linear-off-white:#EFF6FF;
-  --color-linear-white:#FFFFFF;
-  --color-linear-light-white:#F3F3F5;
+
+  /* altura do navbar */
   --spacing-navbar: 4.25rem;
+  
+  /* variaveis de cor (ex: bg-blue-100) */
+  --color-* : initial;
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  
+  --color-gray: #353535;
+  
+  --color-blue: #155DFC;
+  --color-blue-500: #5B8EFF;
+  --color-blue-100: #EFF6FF;
+  
+  --color-grey: #00A63E;
+  --color-grey-100: #F0FDF4;
+
+  --color-yellow: #FDC700;
+  --color-yellow-100: #fef9c2;
+
+  --color-golden: #D08700;
+
+  --color-red: #E7000B;
+
+  --color-neutral-25: #F9FAFB;
+  --color-neutral-50: #F3F3F5;
+  --color-neutral-100: #E5E7EB;
+  --color-neutral-200: #DEDEDE;
+  --color-neutral-300: #C4C4C4;
+  --color-neutral-400: #99A1AF;
+  --color-neutral-500: #717182;
+  --color-neutral-600: #4A5565;
+  --color-neutral-800: #231F20;
+  --color-neutral-900: #0A0A0A;
+  --color-neutral-950: #030213;
+
+  /* cores com transparencia */
+  --color-overlay: #0000001A;
+  --color-transparent: #00000000;
 }
 
 @layer components {
@@ -32,15 +56,15 @@
   }
 
   .text {
-    color: #717182;
+    color: var(--color-neutral-500);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28.433px; /* 162.476% */
+    line-height: 20px;
   }
 
   .black-text {
-    color: #0A0A0A;
+    color: var(--color-neutral-900);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -48,7 +72,7 @@
   }
 
   .link {
-    color: #155DFC;
+    color: var(--color-blue);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -66,7 +90,7 @@
   }
 
   .link-black {
-    color: #4A5565;
+    color: var(--color-neutral-600);
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -74,17 +98,17 @@
     letter-spacing: 0px;
 
     &:hover {
-      color: #000000;
+      color: var(--color-black);
       cursor: pointer;
     }
   }
 
   .base-input {
-      @apply bg-[#F3F3F5] text-[#0A0A0A] accent-black py-1 px-3 h-9 w-full rounded-lg cursor-pointer;
+      @apply bg-neutral-50 text-neutral-900 accent-black py-1 px-3 h-9 w-full rounded-lg cursor-pointer;
   };
 
   .placeholder {
-      @apply placeholder:text-sm placeholder:text-[#717182] placeholder:font-normal;
+      @apply placeholder:text-sm placeholder:text-neutral-500 placeholder:font-normal;
   }
 }
 
@@ -93,9 +117,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: var(--color-black);
+  background-color: var(--color-white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

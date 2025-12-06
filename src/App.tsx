@@ -5,7 +5,7 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import ForgetMyPassword from "./pages/ForgetMyPassword";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer/footer";
+import Footer from "./components/Footer";
 
 export default function App() {
     return (
