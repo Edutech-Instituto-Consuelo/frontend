@@ -18,7 +18,8 @@ export function FormField(props: IPropsFormField) {
   return (
     <div { ...{
         ...props,
-        className: styles({ className: props.className, inline: props.inline })
+        className: styles({ className: props.className, inline: props.inline }),
+        inline: undefined
     } }>
         { props.children }
     </div>
