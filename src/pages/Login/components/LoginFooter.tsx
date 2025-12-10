@@ -3,7 +3,7 @@ import { Button } from "../../../components/Button";
 
 export function LoginFooter() {
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-3">
       <Link to="/" className="block">
         <Button fullWidth variant="secondary" type="button">
           Voltar

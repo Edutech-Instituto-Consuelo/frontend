@@ -2,7 +2,7 @@ import simbolo from "../../../assets/simbolo_black.svg";
 
 export function LoginHeader() {
   return (
-    <div className="text-center space-y-2">
+    <div className="text-center flex flex-col gap-2">
       <div className="flex justify-center mb-6">
         <img src={simbolo} alt="Logo" className="h-16 w-auto" />
       </div>

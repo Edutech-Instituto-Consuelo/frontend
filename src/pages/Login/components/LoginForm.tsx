@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/Form/Input";
 import { loginSchema, type LoginFormData } from "../schemas/loginSchema";
+import { ContainerInputs } from "../../../components/Form/ContainerInputs";
 
 export function LoginForm() {
   const navigate = useNavigate();
@@ -26,7 +27,8 @@ export function LoginForm() {
   const formErrors = errors as unknown as Record<string, Record<string, string>>;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
+     <ContainerInputs>
       <Input
         id="email"
         type="email"
@@ -38,7 +40,7 @@ export function LoginForm() {
         errors={formErrors}
       />
 
-      <div className="space-y-1">
+      <div className="flex flex-col gap-1">
         <div className="flex justify-between items-baseline mb-1">
           <label htmlFor="password" className="text-sm font-medium text-neutral-900 cursor-pointer">
             Senha
@@ -64,6 +66,7 @@ export function LoginForm() {
           {isSubmitting ? "Entrando..." : "Entrar"}
         </Button>
       </div>
+     </ContainerInputs>
     </form>
   );
 }
