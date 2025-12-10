@@ -12,12 +12,12 @@ export function PrivateRoute() {
     const from = useLocation().pathname;
     const roleBasedPath = from.split("/")[1] || "/";
     
-    const notProtectedRoutes = ["/", "/login", "/register", "/explorar"];
+    const basedPathProtected = ["/instrutor", "/aluno", "/admin"];
 
     if (loading)
         return <Loader />;
 
-    if (!isAuthenticated && !notProtectedRoutes.includes(from))
+    if (!isAuthenticated && basedPathProtected.some((path) => from.startsWith(path)))
         return <Navigate to={"/login"} />;
 
     if (isAuthenticated && role !== roleBasedPath)
