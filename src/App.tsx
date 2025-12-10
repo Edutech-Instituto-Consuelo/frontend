@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Home from "./pages/Publico/Home";
+import Login from "./pages/Publico/Login";
 import NotFound from "./pages/NotFound";
-import Register from "./pages/Register";
+import Register from "./pages/Publico/Register";
 import { Loader, PrivateRoute } from "./layout";
 import PaginaEmConstrucao from "./pages/PaginaEmConstrucao";
 
