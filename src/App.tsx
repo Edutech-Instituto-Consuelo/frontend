@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 import { Loader, PrivateRoute } from "./layout";
+import PaginaEmConstrucao from "./pages/PaginaEmConstrucao";
 
 export default function App() {
     return (
@@ -13,20 +14,29 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/recuperar-senha" element={<PaginaEmConstrucao />} />
+                    <Route path="/explorar" element={<PaginaEmConstrucao />} />
+                    <Route path="/cursos/:id" element={<PaginaEmConstrucao />} />
 
                     <Route path="/instrutor">
-                        <Route index element={<div><h2>Dashboard Instrutor</h2></div>} />
-                        <Route path="/instrutor/meus-cursos" element={<div><h2>Meus Cursos</h2></div>} />
+                        <Route index element={<PaginaEmConstrucao />} />
+                        <Route path="/instrutor/cursos" element={<PaginaEmConstrucao />} />
+                        <Route path="/instrutor/cursos/:id/editar" element={<PaginaEmConstrucao />} />
+                        <Route path="/instrutor/correcoes" element={<PaginaEmConstrucao />} />
                     </Route>
 
                     <Route path="/aluno">
-                        <Route index element={<div><h2>Dashboard Aluno</h2></div>} />
-                        <Route path="/aluno/meus-cursos" element={<div><h2>Meus Cursos</h2></div>} />
+                        <Route index element={<PaginaEmConstrucao />} />
+                        <Route path="/aluno/cursos/:id" element={<PaginaEmConstrucao />} />
+                        <Route path="/aluno/cursos/:id/aulas" element={<PaginaEmConstrucao />} />
+                        <Route path="/aluno/certificados" element={<PaginaEmConstrucao />} />
                     </Route>
 
                     <Route path="/admin">
-                        <Route index element={<div><h2>Dashboard Admin</h2></div>} />
-                        <Route path="/admin/cursos" element={<div><h2>Cursos</h2></div>} />
+                        <Route index element={<PaginaEmConstrucao />} />
+                        <Route path="/admin/usuarios" element={<PaginaEmConstrucao />} />
+                        <Route path="/admin/cursos" element={<PaginaEmConstrucao />} />
+                        <Route path="/admin/solicitacoes" element={<PaginaEmConstrucao />} />
                     </Route>
 
                     <Route path="*" element={<NotFound />} />
