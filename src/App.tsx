@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Publico/Home";
 import Login from "./pages/Publico/Login";
 import NotFound from "./pages/NotFound";
@@ -20,23 +20,30 @@ export default function App() {
                     <Route path="/cursos/:id" element={<PaginaEmConstrucao />} />
 
                     <Route path="/instrutor">
-                        <Route index element={<PaginaEmConstrucao />} />
+                        <Route index element={<Navigate to={"/instrutor/dashboard"} />} />
+
+                        <Route path="/instrutor/dashboard" element={<PaginaEmConstrucao />} />
                         <Route path="/instrutor/cursos" element={<PaginaEmConstrucao />} />
                         <Route path="/instrutor/cursos/:id/editar" element={<PaginaEmConstrucao />} />
                         <Route path="/instrutor/correcoes" element={<PaginaEmConstrucao />} />
                     </Route>
 
                     <Route path="/aluno">
-                        <Route index element={<PaginaEmConstrucao />} />
+                        <Route index element={<Navigate to={"/aluno/cursos"} />} />
+
+                        <Route path="/aluno/cursos" element={<PaginaEmConstrucao />} />
                         <Route path="/aluno/cursos/:id" element={<PaginaEmConstrucao />} />
                         <Route path="/aluno/cursos/:id/aulas" element={<PaginaEmConstrucao />} />
                         <Route path="/aluno/certificados" element={<PaginaEmConstrucao />} />
                     </Route>
 
                     <Route path="/admin">
-                        <Route index element={<PaginaEmConstrucao />} />
+                        <Route index element={<Navigate to={"/admin/dashboard"} />} />
+
+                        <Route path="/admin/dashboard" element={<PaginaEmConstrucao />} />
                         <Route path="/admin/usuarios" element={<PaginaEmConstrucao />} />
                         <Route path="/admin/cursos" element={<PaginaEmConstrucao />} />
+                        <Route path="/admin/cursos/:id/editar" element={<PaginaEmConstrucao />} />
                         <Route path="/admin/solicitacoes" element={<PaginaEmConstrucao />} />
                     </Route>
 
