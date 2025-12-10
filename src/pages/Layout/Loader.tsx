@@ -1,4 +1,4 @@
-import logoBlack from "./assets/simbolo_black.svg";
+import logoBlack from "@/assets/simbolo_black.svg";
 
 export function Loader() {
     return (
