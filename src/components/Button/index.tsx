@@ -8,7 +8,7 @@ const buttonStyles = tv({
   variants: {
     variant: {
       primary: "bg-neutral-900 hover:bg-gray text-white border-transparent",
-      secondary: "bg-white hover:bg-neutral-200 text-neutral-900 border-overlay hover:border-neutral-200",
+      secondary: "bg-white hover:bg-neutral-200 text-neutral-900 border-black/50 hover:border-neutral-200",
       accent: "bg-blue hover:bg-blue-500 text-white border-transparent",
     },
     fullWidth: {
