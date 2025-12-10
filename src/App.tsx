@@ -19,6 +19,11 @@ export default function App() {
                     <Route path="/explorar" element={<PaginaEmConstrucao />} />
                     <Route path="/cursos/:id" element={<PaginaEmConstrucao />} />
 
+                    <Route path="/sobre" element={<PaginaEmConstrucao />} />
+                    <Route path="/contato" element={<PaginaEmConstrucao />} />
+                    <Route path="/privacidade" element={<PaginaEmConstrucao />} />
+                    <Route path="/termos" element={<PaginaEmConstrucao />} />
+
                     <Route path="/instrutor">
                         <Route index element={<Navigate to={"/instrutor/dashboard"} />} />
 
