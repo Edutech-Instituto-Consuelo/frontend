@@ -12,7 +12,7 @@ export default function Explore() {
 
   return (
     <div className="bg-neutral-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12 flex flex-col gap-8">
         
         <ExploreHeader />
 
