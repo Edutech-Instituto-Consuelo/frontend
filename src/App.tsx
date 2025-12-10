@@ -3,7 +3,8 @@ import Home from "./pages/Publico/Home";
 import Login from "./pages/Publico/Login";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Publico/Register";
-import { Loader, PrivateRoute } from "./layout";
+import { Loader } from "./pages/Layout/Loader";
+import { PrivateRoute } from "./pages/Layout/PrivateRoute";
 import PaginaEmConstrucao from "./pages/PaginaEmConstrucao";
 
 export default function App() {
