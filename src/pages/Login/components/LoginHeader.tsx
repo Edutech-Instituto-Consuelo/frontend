@@ -3,11 +3,11 @@ import simbolo from "../../../assets/simbolo_black.svg";
 export function LoginHeader() {
   return (
     <div className="text-center flex flex-col gap-2">
-      <div className="flex justify-center mb-6">
-        <img src={simbolo} alt="Logo" className="h-16 w-auto" />
+      <div className="flex justify-center mb-4">
+        <img src={simbolo} alt="Logo" className="h-12 w-auto" />
       </div>
-      <h2 className="text-2xl font-bold text-neutral-900">Bem-vindo(a) de volta!</h2>
-      <p className="text-sm font-normal text-neutral-500">
+      <h2 className="text-lg leading-6 black-text">Bem vindo(a) de volta!</h2>
+      <p className="text">
         Entre para continuar aprendendo!
       </p>
     </div>
