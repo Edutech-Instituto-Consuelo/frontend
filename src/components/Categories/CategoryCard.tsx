@@ -3,11 +3,11 @@ import { tv, type VariantProps } from 'tailwind-variants';
 
 const category = tv({
   slots: {
-    root: 'bg-white border border-[rgba(0,0,0,0.1)] border-solid flex flex-col gap-3 items-center px-2 py-[25px] relative rounded-[10px] shrink-0 w-[188.667px] hover:shadow-[2px_8px_6px_0px_var(--color-overlay)] hover:border-blue-500 transition',
-    icon: 'relative shrink-0 w-[40px] h-[40px]',
+    root: 'bg-white border border-overlay border-solid flex flex-col gap-3 items-center px-2 py-[25px] rounded-[10px] shrink-0 w-[188.667px] hover:shadow-[2px_8px_6px_0px_var(--color-overlay)] hover:border-2 hover:border-blue-500  transition-all duration-300 hover:-translate-y-1 cursor-pointer',
+    icon: 'shrink-0 w-10 h-10',
     img: 'block max-w-none w-full h-full',
-    labelWrap: 'h-[20px] relative shrink-0 w-full',
-    label: "absolute font-['Arimo:Regular',sans-serif] font-normal leading-[20px] left-1/2 text-[14px] text-center text-neutral-950 top-[-0.5px] -translate-x-1/2",
+    labelWrap: 'h-[20px] shrink-0 w-full',
+    label: "black-text text-sm",
   },
 });
 

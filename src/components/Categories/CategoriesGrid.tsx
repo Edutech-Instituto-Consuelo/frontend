@@ -5,9 +5,9 @@ import { tv, type VariantProps } from 'tailwind-variants';
 const grid = tv({
   slots: {
     root: 'py-12 px-4 md:px-8 mx-auto max-w-[1300px]',
-    headingWrap: 'content-stretch flex items-center justify-center px-0 py-0 relative w-full mb-6',
-    heading: "font-['Arimo:Regular',sans-serif] font-normal leading-[24px] relative shrink-0 text-[16px] text-center text-neutral-950",
-    list: 'content-center flex flex-wrap gap-[16px] items-center justify-center relative w-full',
+    headingWrap: 'content-stretch flex items-center justify-center px-0 py-0 w-full mb-6',
+    heading: "black-text shrink-0 text-[16px] text-center",
+    list: 'content-center flex flex-wrap gap-4 items-center justify-center w-full',
   },
 });
 
