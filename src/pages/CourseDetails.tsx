@@ -3,10 +3,10 @@ import { CourseHeader } from "../components/CourseHeader";
 
 export default function CourseDetails() {
     const cursoTeste = {
-        title: "Desenvolvimento Fullstack com Node.js e React",
+        title: "Bootcamp Fullstack Java + React",
         rating: 4.8,
         studentCount: 1240,
-        duration: "45h",
+        duration: 2700,
         difficulty: "Intermediário",
         price: 199.90
     };
@@ -23,7 +23,6 @@ export default function CourseDetails() {
             />
             {/* Espaço para as futuras abas */}
             <div className="container mx-auto px-4 mt-8">
-                Ambiente para futuras abas!
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ interface CourseHeaderProps {
   description?: string;
   rating: number;
   studentCount: number;
-  duration: string;
+  duration: number;
   difficulty: string;
   price: number;
 }
@@ -24,33 +24,24 @@ export function CourseHeader({
 
   return (
     <div className={styles.container}>
-      <div className={styles.contentWrapper}>
-        
-        {/* Breadcrumb estático */}
-        <p className={styles.category}>
-          Bootcamp Fullstack Java + React
-        </p>
+      <h1 className={styles.title}>
+        {title}
+      </h1>
 
-        <h1 className={styles.title}>
-          {title}
-        </h1>
+      <p className={styles.description}>
+        {description}
+      </p>
 
-        <p className={styles.description}>
-          {description}
-        </p>
+      {/* Tags */}
+      <HeaderTags 
+        rating={rating}
+        studentCount={studentCount}
+        duration={duration}
+        difficulty={difficulty}
+      />
 
-        {/* Tags */}
-        <HeaderTags 
-          rating={rating}
-          studentCount={studentCount}
-          duration={duration}
-          difficulty={difficulty}
-        />
-
-        {/* Preço e Botão */}
-        <HeaderPrice price={price} />
-
-      </div>
+      {/* Preço e Botão */}
+      <HeaderPrice price={price} />
     </div>
   );
 }

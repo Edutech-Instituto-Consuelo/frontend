@@ -1,10 +1,11 @@
-import { FaStar, FaUsers, FaClock, FaChartBar } from "react-icons/fa";
+import { FaStar, FaRegClock, FaRegChartBar } from "react-icons/fa";
+import { FiUsers } from "react-icons/fi";
 import { styles } from "./styles";
 
 interface HeaderTagsProps {
   rating: number;
   studentCount: number;
-  duration: string;
+  duration: number;
   difficulty: string;
 }
 
@@ -14,25 +15,25 @@ export function HeaderTags({ rating, studentCount, duration, difficulty }: Heade
       {/* Avaliação */}
       <div className="flex items-center gap-1.5">
         <FaStar className={styles.starIcon} />
-        <span className="font-bold text-base">{rating}</span> 
-        <span className="text-blue-100 font-normal">({studentCount} avaliações)</span>
+        <span className="text-base">{rating}</span> 
+        <span className="text-blue-300 font-normal">({studentCount} avaliações)</span>
       </div>
       
       {/* Alunos */}
       <div className={styles.tagItem}>
-         <FaUsers className={styles.icon} />
+         <FiUsers className={styles.icon} />
          {studentCount} estudantes
       </div>
 
       {/* Duração */}
       <div className={styles.tagItem}>
-         <FaClock className={styles.icon} />
-         {duration}
+         <FaRegClock className={styles.icon} />
+         {(duration / 60).toFixed(0)} horas
       </div>
 
       {/* Dificuldade */}
       <div className={styles.tagItem}>
-         <FaChartBar className={styles.icon} />
+         <FaRegChartBar className={styles.icon} />
          {difficulty}
       </div>
     </div>

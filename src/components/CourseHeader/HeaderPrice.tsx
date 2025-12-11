@@ -20,7 +20,7 @@ export function HeaderPrice({ price }: HeaderPriceProps) {
 
       <div className={styles.buttonContainer}>
         {/* Reutilizando Button e passando classes extras via className */}
-        <Button variant="primary" className={styles.button}>
+        <Button>
           Começar Agora
         </Button>
       </div>
