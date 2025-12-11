@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "../../../../components/Button";
-import { Input } from "../../../../components/Form/Input";
+import { Button } from "@/components/Button";
+import { Input } from "@/components/Form/Input";
 import { loginSchema, type LoginFormData } from "../schemas/loginSchema";
-import { ContainerInputs } from "../../../../components/Form/ContainerInputs";
+import { ContainerInputs } from "@/components/Form/ContainerInputs";
 
 export function LoginForm() {
   const navigate = useNavigate();
