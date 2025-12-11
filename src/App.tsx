@@ -6,12 +6,15 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Explore from "./pages/Explore";
 import Register from "./pages/Register";
+import CourseDetails from "./pages/CourseDetails";
 import { Loader, PrivateRoute } from "./layout";
+
 
 export default function App() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/curso/detalhes" element={<CourseDetails />} />
                 <Route element={<PrivateRoute />} loader={() => <Loader />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
