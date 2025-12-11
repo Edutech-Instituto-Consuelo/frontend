@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card } from "../../../components/Card"; 
+import { Card } from "@/components/Card"; 
 
 // Definição da interface Course e CoursesGridProps
 interface Course {
@@ -18,11 +18,11 @@ interface CoursesGridProps {
 
 export default function CoursesGrid({ courses }: CoursesGridProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-in">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 animate-fade-in">
       {courses.map((course) => (
         <Link key={course.id} to={`/cursos/${course.id}`} className="group">
           <Card 
-            className="h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border-transparent hover:border-neutral-200"
+            className="h-full transition-all duration-300 hover:-translate-y-1"
           >
             <Card.Image src={course.image} alt={course.title} />
             <Card.Body>

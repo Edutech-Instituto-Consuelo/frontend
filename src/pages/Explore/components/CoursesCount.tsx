@@ -8,9 +8,9 @@ export default function CoursesCount({ count }: CoursesCountProps) {
   if (count === 0) return null;
 
   return (
-    <div className="mb-6 animate-fade-in">
-      <p className="text-sm text-neutral-500">
-        Foram encontrados <span className="font-bold text-neutral-900">{count}</span> resultados
+    <div className="animate-fade-in">
+      <p className="text text-base">
+        {count} cursos encontrados
       </p>
     </div>
   );
