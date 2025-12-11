@@ -1,5 +1,6 @@
 import cursosPopulares from "@/data/cursosPopulares";
 import { Card } from "@/components/Card/index";
+import CategoriesGrid from '@/components/Categories/CategoriesGrid';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+          <CategoriesGrid />
     </div>
   )
 }
