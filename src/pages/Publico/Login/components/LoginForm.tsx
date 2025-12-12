@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "../../../components/Button";
-import { Input } from "../../../components/Form/Input";
+import { Button } from "@/components/Button";
+import { Input } from "@/components/Form/Input";
 import { loginSchema, type LoginFormData } from "../schemas/loginSchema";
-import { ContainerInputs } from "../../../components/Form/ContainerInputs";
+import { ContainerInputs } from "@/components/Form/ContainerInputs";
 
 export function LoginForm() {
   const navigate = useNavigate();
@@ -27,46 +27,43 @@ export function LoginForm() {
   const formErrors = errors as unknown as Record<string, Record<string, string>>;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
-     <ContainerInputs>
-      <Input
-        id="email"
-        type="email"
-        label="Email"
-        placeholder="seu@email.com"
-        autoFocus
-        autoComplete="email"
-        {...register("email")}
-        errors={formErrors}
-      />
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <ContainerInputs>
+        <Input
+          id="email"
+          type="email"
+          label="Email"
+          placeholder="seu@email.com"
+          autoFocus
+          autoComplete="email"
+          {...register("email")}
+          errors={formErrors}
+        />
 
-      <div className="flex flex-col gap-1">
-        <div className="flex justify-between items-baseline mb-1">
-          <label htmlFor="password" className="text-sm font-medium text-neutral-900 cursor-pointer">
-            Senha
-          </label>
-          <Link to="/forgot-password" className="link text-sm">
-            Esqueceu sua senha?
-          </Link>
-        </div>
-        
         <Input
           id="password"
           type="password"
+          label="Senha"
           placeholder="••••••••"
           autoComplete="current-password"
           {...register("password")}
           errors={formErrors}
-          label="" 
         />
-      </div>
 
-      <div className="pt-2 flex flex-col gap-3">
+        <Link to="/forgot-password" className="link text-sm">
+          Esqueceu sua senha?
+        </Link>
+
         <Button fullWidth type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Entrando..." : "Entrar"}
         </Button>
-      </div>
-     </ContainerInputs>
+
+        <Link to="/" className="block">
+          <Button fullWidth variant="secondary" type="button">
+            Voltar
+          </Button>
+        </Link>
+      </ContainerInputs>
     </form>
   );
 }

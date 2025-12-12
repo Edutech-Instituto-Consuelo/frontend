@@ -2,7 +2,6 @@ import { cursosMatriculados } from "@/data/cursosMatriculados";
 import { Card } from "@/components/Card/index";
 import { Button } from "@/components/Button";
 
-
 export default function Dashboard() {
   return (
     <div>

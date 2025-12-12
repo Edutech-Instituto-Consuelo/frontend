@@ -1,4 +1,4 @@
-import simbolo from "../../../assets/simbolo_black.svg";
+import simbolo from "@/assets/simbolo_black.svg";
 
 export function LoginHeader() {
   return (
