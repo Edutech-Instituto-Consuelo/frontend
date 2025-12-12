@@ -1,5 +1,5 @@
 import { AuthLayout } from "@/components/AuthLayout";
-import { LoginHeader, LoginForm, LoginFooter } from "./components";
+import { LoginHeader, LoginForm, LoginFooter } from "@/pages/Publico/Login/components";
 
 
 export default function Login() {

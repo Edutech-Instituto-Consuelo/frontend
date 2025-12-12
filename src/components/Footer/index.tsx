@@ -44,7 +44,7 @@ export default function Footer(): React.ReactElement {
                             </li>
 
                             <li>
-                                <Link to="/professor" className={link()}>Seja um Professor</Link>
+                                <Link to="/register" className={link()}>Seja um Professor</Link>
                             </li>
                         </ul>
                     </div>
