@@ -1,3 +1,5 @@
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
 import cursosPopulares from "@/data/cursosPopulares";
 import { Card } from "@/components/Card/index";
 import CategoriesGrid from '@/components/Categories/CategoriesGrid';
@@ -5,12 +7,17 @@ import CategoriesGrid from '@/components/Categories/CategoriesGrid';
 export default function Home() {
   return (
     <div>
+      
+      <Header />
+      
+      <Hero />
+
       <section className="py-12 px-4 md:px-8 mx-auto max-w-[1300px]">
         <h2 className="text-base font-normal mb-6 text-neutral-900">
           🔥 Cursos Populares
         </h2>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 animate-fade-in">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr) )] gap-6 animate-fade-in">
           {cursosPopulares.map((curso) => (
             <Card key={curso.id} className="transition-all duration-300 hover:-translate-y-1">
               <Card.Image src={curso.imagem} alt={curso.titulo} />
