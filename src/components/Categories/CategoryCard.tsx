@@ -14,14 +14,14 @@ const { root, icone, labelWrap } = category();
 type CategorySchema = VariantProps<typeof category>;
 
 interface CategoryCardProps extends CategorySchema {
+  id: string;
   label: string;
   icon: React.ReactNode;
-  category: string;
 }
 
-export default function CategoryCard({ label, icon, category }: CategoryCardProps) {
+export default function CategoryCard({ label, icon, id }: CategoryCardProps) {
   return (
-    <Link to={`/explorar?categoria=${category}`} className={root()}>
+    <Link to={`/explorar?categoria=${id}`} className={root()}>
       <div className={icone()}>
         { icon }
       </div>

@@ -20,14 +20,13 @@ export default function CategoriesGrid(_props?: GridSchema) {
     id: string;
     label: string;
     icon?: React.ReactNode;
-    category: string;
   };
 
   const categories: Category[] = [
-    { id: 'programacao', label: 'Programação', category: 'programacao', icon: <LuCode /> },
-    { id: 'design', label: 'Design', category: 'design', icon: <LuPalette /> },
-    { id: 'negocios', label: 'Negocios', category: 'negocios', icon: <LuBriefcase /> },
-    { id: 'marketing', label: 'Marketing', category: 'marketing', icon: <LuTrendingUp /> },
+    { id: 'programacao', label: 'Programação', icon: <LuCode /> },
+    { id: 'design', label: 'Design', icon: <LuPalette /> },
+    { id: 'negocios', label: 'Negocios', icon: <LuBriefcase /> },
+    { id: 'marketing', label: 'Marketing', icon: <LuTrendingUp /> },
   ];
 
   return (
@@ -38,7 +37,7 @@ export default function CategoriesGrid(_props?: GridSchema) {
 
       <div className={list()}>
         {categories.map((cat: typeof categories[0]) => (
-          <CategoryCard key={cat.id} label={cat.label} category={cat.category} icon={cat.icon} />
+          <CategoryCard key={cat.id} label={cat.label} icon={cat.icon} />
         ))}
       </div>
     </section>
