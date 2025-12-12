@@ -27,21 +27,24 @@ export default function Home() {
           🔥 Cursos Populares
         </h2>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 animate-fade-in">
+        <div className="responsive gap-6 animate-fade-in">
           {cursosPopulares.map((curso) => (
-            <Card key={curso.id} className="transition-all duration-300 hover:-translate-y-1">
-              <Card.Image src={curso.imagem} alt={curso.titulo} />
-              <Card.Body>
-                <Card.Title>{curso.titulo}</Card.Title>
-                <Card.Author>{curso.instrutor}</Card.Author>
-                <Card.Rating rating={curso.avaliacao} reviews={curso.numeroAvaliacoes} />
-                <Card.Price value={curso.preco} />
-              </Card.Body>
-            </Card>
+            <Link to={`/cursos/${curso.id}`} key={curso.id}>
+              <Card key={curso.id} className="transition-all duration-300 hover:-translate-y-1">
+                <Card.Image src={curso.imagem} alt={curso.titulo} />
+                <Card.Body>
+                  <Card.Title>{curso.titulo}</Card.Title>
+                  <Card.Author>{curso.instrutor}</Card.Author>
+                  <Card.Rating rating={curso.avaliacao} reviews={curso.numeroAvaliacoes} />
+                  <Card.Price value={curso.preco} />
+                </Card.Body>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>
-          <CategoriesGrid />
+
+        <CategoriesGrid />
     </div>
   )
 }
