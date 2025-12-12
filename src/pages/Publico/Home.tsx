@@ -4,6 +4,7 @@ import CategoriesGrid from '@/components/Categories/CategoriesGrid';
 import { BaseInput } from "@/components/Form";
 import { Button } from "@/components/Button";
 import { Link, useNavigate } from "react-router-dom";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -16,7 +17,9 @@ export default function Home() {
   }
 
   return (
-    <div className="grid gap-8 py-12">
+    <div className="grid gap-8 pb-12">
+      <Hero />
+
       <form onSubmit={handleSubmit} className="grid xs:inline-flex gap-2 w-full max-w-200 px-4 mx-auto">
         <BaseInput id="buscar" placeholder="O que você gostaria de aprender?" />
         <Button>Buscar</Button>
