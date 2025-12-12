@@ -7,7 +7,7 @@ import { useUser } from "@/hooks/useUser";
 
 const styles = tv({
     slots: {
-        navbar: "fixed flex justify-between items-center bg-white px-4 xs:px-[7.3vw] h-navbar w-full border-b border-overlay",
+        navbar: "fixed flex justify-between items-center bg-white px-4 xs:px-[7.3vw] h-navbar w-full border-b border-overlay z-50",
     }
 });
 
