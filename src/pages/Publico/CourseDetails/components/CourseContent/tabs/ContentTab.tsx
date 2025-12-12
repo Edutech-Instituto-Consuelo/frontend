@@ -69,7 +69,7 @@ export function ContentTab() {
               {/* Cabeçalho Clicável */}
               <button 
                 onClick={() => toggleModule(module.id)}
-                className="w-full flex items-center justify-between p-5 bg-neutral-50 hover:bg-neutral-100 transition-colors text-left"
+                className="w-full flex items-center justify-between p-5 bg-neutral-50 hover:bg-neutral-100 transition-colors text-left cursor-pointer"
               >
                 <div className="flex flex-col gap-1">
                   <span className="font-bold text-neutral-900 text-lg">

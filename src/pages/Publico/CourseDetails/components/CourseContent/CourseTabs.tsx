@@ -15,7 +15,7 @@ export function CourseTabs() {
         {/* Botão Sobre */}
         <button
           onClick={() => setActiveTab("about")}
-          className={`px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
+          className={`cursor-pointer px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
             activeTab === "about"
               ? "bg-white text-neutral-900 shadow-sm" // Ativo
               : "text-neutral-500 hover:text-neutral-900" // Inativo
@@ -27,7 +27,7 @@ export function CourseTabs() {
         {/* Botão Conteúdo */}
         <button
           onClick={() => setActiveTab("content")}
-          className={`px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
+          className={`cursor-pointer px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
             activeTab === "content"
               ? "bg-white text-neutral-900 shadow-sm"
               : "text-neutral-500 hover:text-neutral-900"
@@ -39,7 +39,7 @@ export function CourseTabs() {
         {/* Botão Avaliações */}
         <button
           onClick={() => setActiveTab("reviews")}
-          className={`px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
+          className={`cursor-pointer px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
             activeTab === "reviews"
               ? "bg-white text-neutral-900 shadow-sm"
               : "text-neutral-500 hover:text-neutral-900"
