@@ -1,4 +1,4 @@
-import { CourseHeader } from "../components/CourseHeader";
+import { CourseHeader } from "./components/CourseHeader";
 
 
 export default function CourseDetails() {

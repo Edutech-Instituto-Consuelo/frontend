@@ -1,6 +1,6 @@
-import categories from '@/data/categories';
 import CategoryCard from './CategoryCard';
 import { tv, type VariantProps } from 'tailwind-variants';
+import { LuBriefcase, LuTrendingUp, LuPalette, LuCode } from "react-icons/lu";
 
 const grid = tv({
   slots: {
@@ -16,6 +16,19 @@ const { root, headingWrap, heading, list } = grid();
 type GridSchema = VariantProps<typeof grid>;
 
 export default function CategoriesGrid(_props?: GridSchema) {
+  type Category = {
+    id: string;
+    label: string;
+    icon: React.ReactNode;
+  };
+
+  const categories: Category[] = [
+    { id: 'programacao', label: 'Programação', icon: <LuCode /> },
+    { id: 'design', label: 'Design', icon: <LuPalette /> },
+    { id: 'negocios', label: 'Negocios', icon: <LuBriefcase /> },
+    { id: 'marketing', label: 'Marketing', icon: <LuTrendingUp /> },
+  ];
+
   return (
     <section className={root()}>
       <div className={headingWrap()}>
@@ -23,8 +36,8 @@ export default function CategoriesGrid(_props?: GridSchema) {
       </div>
 
       <div className={list()}>
-        {categories.map((cat: typeof categories[0]) => (
-          <CategoryCard key={cat.id} label={cat.label} src={cat.img} />
+        {categories.map((cat) => (
+          <CategoryCard key={cat.id} { ...cat } />
         ))}
       </div>
     </section>

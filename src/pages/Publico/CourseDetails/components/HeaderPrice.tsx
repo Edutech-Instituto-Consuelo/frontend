@@ -1,4 +1,4 @@
-import { Button } from "../Button"; // Ajuste o caminho se necessário
+import { Button } from "@/components/Button"; // Ajuste o caminho se necessário
 import { styles } from "./styles";
 
 interface HeaderPriceProps {
