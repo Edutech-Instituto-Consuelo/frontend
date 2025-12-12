@@ -19,7 +19,7 @@ export default function CategoriesGrid(_props?: GridSchema) {
   type Category = {
     id: string;
     label: string;
-    icon?: React.ReactNode;
+    icon: React.ReactNode;
   };
 
   const categories: Category[] = [
@@ -36,8 +36,8 @@ export default function CategoriesGrid(_props?: GridSchema) {
       </div>
 
       <div className={list()}>
-        {categories.map((cat: typeof categories[0]) => (
-          <CategoryCard key={cat.id} label={cat.label} icon={cat.icon} />
+        {categories.map((cat) => (
+          <CategoryCard key={cat.id} { ...cat } />
         ))}
       </div>
     </section>
