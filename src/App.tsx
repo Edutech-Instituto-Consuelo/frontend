@@ -6,6 +6,8 @@ import Register from "@/pages/Publico/Register";
 import { Loader } from "@/pages/Layout/Loader";
 import { PrivateRoute } from "@/pages/Layout/PrivateRoute";
 import PaginaEmConstrucao from "@/pages/PaginaEmConstrucao";
+import CourseDetails from "@/pages/Publico/CourseDetails";
+import Explore from "@/pages/Publico/Explore";
 
 export default function App() {
     return (
@@ -16,8 +18,9 @@ export default function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/recuperar-senha" element={<PaginaEmConstrucao />} />
-                    <Route path="/explorar" element={<PaginaEmConstrucao />} />
-                    <Route path="/cursos/:id" element={<PaginaEmConstrucao />} />
+
+                    <Route path="/explorar" element={<Explore />} />
+                    <Route path="/cursos/:id" element={<CourseDetails />} />
 
                     <Route path="/sobre" element={<PaginaEmConstrucao />} />
                     <Route path="/contato" element={<PaginaEmConstrucao />} />
