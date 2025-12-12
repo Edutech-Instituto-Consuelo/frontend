@@ -114,6 +114,12 @@
   }
 }
 
+@layer utilities {
+  .responsive {
+    @apply grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] xs:grid-cols-[repeat(auto-fit,minmax(22rem,1fr))]
+  }
+}
+
 :root {
   font-family: Arimo, sans-serif;
   line-height: 1.5;
