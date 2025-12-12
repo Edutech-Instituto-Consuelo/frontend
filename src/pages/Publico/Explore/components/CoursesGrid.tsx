@@ -18,7 +18,7 @@ interface CoursesGridProps {
 
 export default function CoursesGrid({ courses }: CoursesGridProps) {
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 animate-fade-in">
+    <div className="responsive gap-6 animate-fade-in">
       {courses.map((course) => (
         <Link key={course.id} to={`/cursos/${course.id}`} className="group">
           <Card 

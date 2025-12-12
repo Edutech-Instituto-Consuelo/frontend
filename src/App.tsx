@@ -8,6 +8,7 @@ import { PrivateRoute } from "@/pages/Layout/PrivateRoute";
 import PaginaEmConstrucao from "@/pages/PaginaEmConstrucao";
 import CourseDetails from "@/pages/Publico/CourseDetails";
 import Explore from "@/pages/Publico/Explore";
+import DashboardAluno from "@/pages/Dashboard";
 
 export default function App() {
     return (
@@ -39,7 +40,7 @@ export default function App() {
                     <Route path="/aluno">
                         <Route index element={<Navigate to={"/aluno/cursos"} />} />
 
-                        <Route path="/aluno/cursos" element={<PaginaEmConstrucao />} />
+                        <Route path="/aluno/cursos" element={<DashboardAluno />} />
                         <Route path="/aluno/cursos/:id" element={<PaginaEmConstrucao />} />
                         <Route path="/aluno/cursos/:id/aulas" element={<PaginaEmConstrucao />} />
                         <Route path="/aluno/certificados" element={<PaginaEmConstrucao />} />
