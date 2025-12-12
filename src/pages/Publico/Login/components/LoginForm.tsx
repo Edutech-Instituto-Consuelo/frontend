@@ -40,19 +40,21 @@ export function LoginForm() {
           errors={formErrors}
         />
 
-        <Input
-          id="password"
-          type="password"
-          label="Senha"
-          placeholder="••••••••"
-          autoComplete="current-password"
-          {...register("password")}
-          errors={formErrors}
-        />
+        <div className="relative">
+          <Input
+            id="password"
+            type="password"
+            label="Senha"
+            placeholder="••••••••"
+            autoComplete="current-password"
+            {...register("password")}
+            errors={formErrors}
+          />
 
-        <Link to="/forgot-password" className="link text-sm">
-          Esqueceu sua senha?
-        </Link>
+          <Link to="/forgot-password" className="link text-sm absolute right-0 top-0">
+            Esqueceu sua senha?
+          </Link>
+        </div>
 
         <Button fullWidth type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Entrando..." : "Entrar"}

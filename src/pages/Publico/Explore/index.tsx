@@ -10,7 +10,7 @@ export default function Explore() {
   const hasCourses = CURSOS_LISTA.length > 0;
 
   return (
-    <div className="grid grid-cols-[30rem_1fr] gap-8 w-full mx-auto py-8 px-2 xs:px-16">
+    <div className="grid md:grid-cols-[25rem_1fr] gap-8 w-full mx-auto py-8 px-2 xs:px-16">
       <form className="inline-flex gap-4 col-span-full w-1/2">
         <BaseInput id="buscar" placeholder="Buscar cursos..." />
       </form>
