@@ -5,7 +5,6 @@ import { BaseInput } from "@/components/Form";
 import { Button } from "@/components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import Hero from "@/components/Hero";
-import Header from "@/components/Header";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -19,8 +18,6 @@ export default function Home() {
 
   return (
     <div className="grid gap-8 pb-12">
-      <Header />
-
       <Hero />
 
       <form onSubmit={handleSubmit} className="grid xs:inline-flex gap-2 w-full max-w-200 px-4 mx-auto">
