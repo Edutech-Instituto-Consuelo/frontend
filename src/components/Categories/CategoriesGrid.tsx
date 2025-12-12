@@ -1,6 +1,6 @@
 import CategoryCard from './CategoryCard';
 import { tv, type VariantProps } from 'tailwind-variants';
-import { TbCategory } from 'react-icons/tb';
+import { LuBriefcase, LuTrendingUp, LuPalette, LuCode } from "react-icons/lu";
 
 const grid = tv({
   slots: {
@@ -24,10 +24,10 @@ export default function CategoriesGrid(_props?: GridSchema) {
   };
 
   const categories: Category[] = [
-    { id: 'programacao', label: 'Programação', category: 'programacao', icon: <TbCategory /> },
-    { id: 'design', label: 'Design', category: 'design', icon: <TbCategory /> },
-    { id: 'negocios', label: 'Negocios', category: 'negocios', icon: <TbCategory /> },
-    { id: 'marketing', label: 'Marketing', category: 'marketing', icon: <TbCategory /> },
+    { id: 'programacao', label: 'Programação', category: 'programacao', icon: <LuCode /> },
+    { id: 'design', label: 'Design', category: 'design', icon: <LuPalette /> },
+    { id: 'negocios', label: 'Negocios', category: 'negocios', icon: <LuBriefcase /> },
+    { id: 'marketing', label: 'Marketing', category: 'marketing', icon: <LuTrendingUp /> },
   ];
 
   return (
