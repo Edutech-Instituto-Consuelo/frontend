@@ -18,6 +18,8 @@
   
   --color-blue: #155DFC;
   --color-blue-500: #5B8EFF;
+  --color-blue-300: #BEDBFF;
+  --color-blue-200: #DBEAFE;
   --color-blue-100: #EFF6FF;
   
   --color-grey: #00A63E;
@@ -109,6 +111,12 @@
 
   .placeholder {
       @apply placeholder:text-sm placeholder:text-neutral-500 placeholder:font-normal;
+  }
+}
+
+@layer utilities {
+  .responsive {
+    @apply grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] xs:grid-cols-[repeat(auto-fit,minmax(22rem,1fr))]
   }
 }
 

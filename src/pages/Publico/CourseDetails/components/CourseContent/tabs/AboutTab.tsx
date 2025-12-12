@@ -3,14 +3,7 @@ export function AboutTab() {
     <div className="flex flex-col gap-6 py-6 max-w-4xl">
       
       {/* Seção Sobre */}
-      <section className="flex flex-col gap-2"> {/* Gap reduzido de 4 para 2, pois o texto é igual */}
-        
-        {/* CORREÇÃO FINAL: 
-            - text-base (16px)
-            - font-normal (400) -> Removemos o bold!
-            - leading-6 (24px)
-            - text-neutral-900 (Preto #0A0A0A)
-        */}
+      <section className="flex flex-col gap-2"> 
         <h3 className="text-base font-normal leading-6 text-neutral-900">
           Sobre este curso:
         </h3>
@@ -27,7 +20,6 @@ export function AboutTab() {
 
       {/* Seção O que você vai aprender */}
       <section className="flex flex-col gap-2">
-        {/* Mesmo ajuste aqui: Normal e 16px */}
         <h3 className="text-base font-normal leading-6 text-neutral-900">
           O que você vai aprender:
         </h3>
@@ -58,7 +50,6 @@ export function AboutTab() {
           </div>
           
           <div className="flex flex-col">
-            {/* O nome do professor geralmente mantém um destaque, mas se quiser seguir o padrão acima, tire o bold também */}
             <h4 className="text-base font-bold text-neutral-900">Guilherme Clemente</h4>
             <p className="text-sm text-neutral-500">Engenheiro de Software</p>
           </div>

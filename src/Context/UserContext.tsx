@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 interface IUserStorage {
     nome: string;
-    tipo_usuario: string;
+    tipo_usuario: "aluno" | "instrutor" | "admin";
 }
 
 interface IUserContext {

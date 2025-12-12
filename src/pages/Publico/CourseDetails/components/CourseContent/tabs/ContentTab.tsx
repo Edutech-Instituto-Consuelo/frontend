@@ -58,7 +58,7 @@ export function ContentTab() {
         <span>11h 45m de conteúdo</span>
       </div>
 
-      {/* 2. Lista de Módulos (Acordeão) */}
+      {/* 2. Lista de Módulos */}
       <div className="flex flex-col gap-4">
         {modulesMock.map((module) => {
           const isOpen = openModules.includes(module.id);
@@ -92,7 +92,6 @@ export function ContentTab() {
                   {module.lessons.map((lesson) => (
                     <div key={lesson.id} className="p-4 pl-6 flex items-center justify-between hover:bg-neutral-50 transition-colors group cursor-pointer bg-white">
                       
-                      {/* Lado Esquerdo: Ícone + Título */}
                       <div className="flex items-center gap-4">
                         <FaPlayCircle className="text-neutral-300 group-hover:text-neutral-500 text-xl shrink-0" />
                         <span className="text-sm font-medium text-neutral-700">
@@ -100,10 +99,8 @@ export function ContentTab() {
                         </span>
                       </div>
 
-                      {/* Lado Direito: Badge Grátis ou Cadeado + Duração */}
                       <div className="flex items-center gap-4">
                          {lesson.isFree ? (
-                           // Badge estilo Outline (Branco com borda escura)
                            <span className="text-[10px] font-bold text-neutral-800 border border-neutral-400 bg-white px-2 py-0.5 rounded uppercase tracking-wide">
                              Grátis
                            </span>

@@ -7,7 +7,7 @@ const reviewsMock = [
     name: "Babi Nunes",
     date: "há 2 semanas",
     rating: 5,
-    comment: "O curso é excelente! A didática do Guilherme é muito boa, consegui entender conceitos de React que eu travava antes. Recomendo demais!"
+    comment: "O curso é excelente! A didática do professor é muito boa, consegui entender conceitos de React que eu travava antes. Recomendo demais!"
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ export function ReviewsTab() {
   return (
     <div className="flex flex-col gap-8 py-6 max-w-4xl text-neutral-600">
       
-      {/* Resumo da Nota (Opcional, pois já tem no Header, mas fica bonito aqui) */}
+      {/* Resumo da Nota */}
       <div className="flex items-center gap-4 border-b border-neutral-100 pb-6">
         <div className="flex flex-col">
             <span className="text-5xl font-bold text-neutral-900">4.8</span>
