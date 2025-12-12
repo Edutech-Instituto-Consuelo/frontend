@@ -8,4 +8,5 @@ export interface ITableProps {
     data: Array<TObj>;
     columns: TColumns;
     customRender?: TCustomRender;
+    className?: string;
 }
