@@ -8,7 +8,7 @@ import { PrivateRoute } from "@/pages/Layout/PrivateRoute";
 import PaginaEmConstrucao from "@/pages/PaginaEmConstrucao";
 import CourseDetails from "@/pages/Publico/CourseDetails";
 import Explore from "@/pages/Publico/Explore";
-import DashboardAluno from "@/pages/Dashboard";
+import DashboardAluno from "@/pages/Aluno/Dashboard";
 
 export default function App() {
     return (
