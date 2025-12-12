@@ -1,11 +1,28 @@
 import cursosPopulares from "@/data/cursosPopulares";
 import { Card } from "@/components/Card/index";
 import CategoriesGrid from '@/components/Categories/CategoriesGrid';
+import { BaseInput } from "@/components/Form";
+import { Button } from "@/components/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    const busca = event.target.buscar.value;
+
+    navigate(`/explorar?busca=${busca}`);
+  }
+
   return (
-    <div>
-      <section className="py-12 px-4 md:px-8 mx-auto max-w-[1300px]">
+    <div className="grid gap-8 py-12">
+      <form onSubmit={handleSubmit} className="grid xs:inline-flex gap-2 w-full max-w-200 px-4 mx-auto">
+        <BaseInput id="buscar" placeholder="O que você gostaria de aprender?" />
+        <Button>Buscar</Button>
+      </form>
+
+      <section className="px-4 md:px-8 mx-auto w-full max-w-[1300px]">
         <h2 className="text-base font-normal mb-6 text-neutral-900">
           🔥 Cursos Populares
         </h2>
