@@ -1,5 +1,5 @@
+import { CourseTabs } from "./components/CourseContent";
 import { CourseHeader } from "./components/CourseHeader";
-
 
 export default function CourseDetails() {
     const cursoTeste = {
@@ -21,8 +21,11 @@ export default function CourseDetails() {
                 difficulty={cursoTeste.difficulty}
                 price={cursoTeste.price}
             />
-            {/* Espaço para as futuras abas */}
-            <div className="container mx-auto px-4 mt-8">
+            
+            <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col w-full max-w-[955px] gap-[32px] pl-[59px] min-h-[372px] py-8">
+                    <CourseTabs/>
+                </div>
             </div>
         </div>
     );
