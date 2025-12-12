@@ -8,7 +8,7 @@ import Explore from "./pages/Explore";
 import Register from "./pages/Register";
 import CourseDetails from "./pages/CourseDetails";
 import { Loader, PrivateRoute } from "./layout";
-
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
     return (
@@ -27,7 +27,7 @@ export default function App() {
                     </Route>
 
                     <Route path="/aluno">
-                        <Route index element={<div><h2>Dashboard Aluno</h2></div>} />
+                        <Route index element={<Dashboard />} />
                         <Route path="/aluno/meus-cursos" element={<div><h2>Meus Cursos</h2></div>} />
                     </Route>
 
@@ -38,6 +38,7 @@ export default function App() {
 
                     <Route path="*" element={<NotFound />} />
                 </Route>
+                
             </Routes>
         </BrowserRouter>
     );
