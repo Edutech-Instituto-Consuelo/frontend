@@ -18,15 +18,15 @@ export default function Navbar() {
 
     const links = {
         aluno: [
-            { label: "Meus Cursos", to: "/aluno/meus-cursos" },
-            { label: "Explorar", to: "/aluno/explorar" },
+            { label: "Explorar", to: "/explorar" },
+            { label: "Atividades", to: "/aluno/atividades" },
         ],
-    
+
         instrutor: [
             { label: "Meus Cursos", to: "/instrutor/meus-cursos" },
-            { label: "Avaliações", to: "/instrutor/avaliacoes" },
+            { label: "Correções", to: "/instrutor/correcoes" },
         ],
-    
+
         admin: [
             { label: "Usuários", to: "/admin/usuarios" },
             { label: "Cursos", to: "/admin/cursos" },
