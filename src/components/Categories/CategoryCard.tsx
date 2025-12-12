@@ -1,37 +1,34 @@
-import type { ComponentProps } from 'react';
+import { Link } from 'react-router-dom';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const category = tv({
   slots: {
-    root: 'bg-white border border-overlay border-solid flex flex-col gap-3 items-center px-2 py-[25px] rounded-[10px] shrink-0 w-[188.667px] hover:shadow-[2px_8px_6px_0px_var(--color-overlay)] hover:border-2 hover:border-blue-500  transition-all duration-300 hover:-translate-y-1 cursor-pointer',
-    icon: 'shrink-0 w-10 h-10',
-    img: 'block max-w-none w-full h-full',
-    labelWrap: 'h-[20px] shrink-0 w-full',
-    label: "black-text text-sm",
+    root: 'grid gap-3 justify-items-center px-2 py-[25px] bg-white w-48 border border-overlay border-solid rounded-[10px] hover:shadow-[2px_8px_6px_0px_var(--color-overlay)] hover:border-3 hover:border-blue-500 cursor-pointer',
+    icone: 'text-[40px] text-blue-500',
+    labelWrap: 'black-text text-sm text-center leading-5 w-full',
   },
 });
 
-const { root, icon, img, labelWrap, label } = category();
+const { root, icone, labelWrap } = category();
 
 type CategorySchema = VariantProps<typeof category>;
 
-interface CategoryCardProps extends ComponentProps<'button'>, CategorySchema {
+interface CategoryCardProps extends CategorySchema {
   label: string;
-  src: string;
+  icon: React.ReactNode;
+  category: string;
 }
 
-export function CategoryCard({ label: ariaLabel, src, className, ...props }: CategoryCardProps) {
+export default function CategoryCard({ label, icon, category }: CategoryCardProps) {
   return (
-    <button className={root({ className })} {...props} aria-label={ariaLabel}>
-      <div className={icon()}>
-        <img src={src} alt={ariaLabel} className={img()} />
+    <Link to={`/explorar?categoria=${category}`} className={root()}>
+      <div className={icone()}>
+        { icon }
       </div>
 
       <div className={labelWrap()}>
-        <p className={label()}>{ariaLabel}</p>
+        <p>{label}</p>
       </div>
-    </button>
+    </Link>
   );
 }
-
-export default CategoryCard;
