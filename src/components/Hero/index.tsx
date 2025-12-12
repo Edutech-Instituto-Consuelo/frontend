@@ -3,22 +3,22 @@ import imgHeader from "@/assets/fotoheader.jpg";
 
 export default function Hero() {
   return (
-    <section className="bg-linear-to-b from-blue-100 to-white relative pt-28.5 pb-8 xs:pb-28.5 w-full h-fit overflow-hidden">
+    <header className="grid bg-linear-to-b from-blue-100 to-white relative w-full h-fit min-h-[400px] max-h-[600px] overflow-hidden">
 
       {/* Imagem de fundo */}
       <img 
-        className="hidden lg:block absolute inset-0 bg-cover bg-no-repeat bg-position-[center_20%] sm:bg-position-[center_40%] md:bg-center"
+        className="hidden sm:block relative inset-0 bg-cover bg-no-repeat bg-[center_20%] sm:bg-[center_40%] md:bg-center"
         src={imgHeader}
         alt="Imagem de fundo do Home"
       />
 
       {/* Overlay suave para legibilidade */}
-      <div className="absolute inset-0 lg:bg-white/70" />
+      <div className="absolute inset-0 sm:bg-white/70" />
 
       {/* Conteúdo - Alinhado à esquerda */}
-      <div className="grid gap-6 content-center justify-center md:justify-start md:pl-[114.5px] relative px-4 w-full z-10">
+      <div className="grid gap-6 content-center justify-center sm:absolute sm:inset-0 md:justify-start md:content-start p-4 pt-8 md:p-[114.5px] w-full h-full z-20">
         {/* Título com palavra em azul */}
-        <h1 className="text-[42px] font-bold text-neutral-900 leading-none">
+        <h1 className="text-[40px] xs:text-[42px] font-bold text-neutral-900 leading-none">
           Domine as<br />
           Habilidades do<br />
           <span className="text-blue">Futuro</span>
@@ -33,6 +33,6 @@ export default function Hero() {
         {/* Botão de Call-to-Action */}
         <Button variant="accent" className='w-fit'>Quero me Inscrever</Button>
       </div>
-    </section>
+    </header>
   );
 }
