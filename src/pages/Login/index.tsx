@@ -1,12 +1,15 @@
-import { useLocation } from "react-router-dom";
+import { AuthLayout } from "@/components/AuthLayout";
+import { LoginHeader, LoginForm, LoginFooter } from "./components";
+
 
 export default function Login() {
-    const from = useLocation().state?.from || "/";
-    // TODO usar o 'from' para redirecionar após o login bem-sucedido
-
-    return (
-        <div>
-            <h1>Login</h1>
-        </div>
-    );
+  return (
+    <AuthLayout>
+        <LoginHeader />
+        
+        <LoginForm />
+        
+        <LoginFooter />
+    </AuthLayout>
+  );
 }

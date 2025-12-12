@@ -2,17 +2,24 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Explore from "./pages/Explore";
 import Register from "./pages/Register";
+import CourseDetails from "./pages/CourseDetails";
 import { Loader, PrivateRoute } from "./layout";
+
 
 export default function App() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/curso/detalhes" element={<CourseDetails />} />
                 <Route element={<PrivateRoute />} loader={() => <Loader />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/explorar" element={<Explore />} />
 
                     <Route path="/instrutor">
                         <Route index element={<div><h2>Dashboard Instrutor</h2></div>} />
