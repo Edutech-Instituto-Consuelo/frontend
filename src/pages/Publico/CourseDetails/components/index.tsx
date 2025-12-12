@@ -1,1 +1,1 @@
-export { CourseHeader } from '../CourseHeader';
+export { CourseHeader } from './CourseHeader';
