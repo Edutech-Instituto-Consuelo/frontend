@@ -32,7 +32,7 @@ export function ReviewsTab() {
       {/* Resumo da Nota */}
       <div className="flex items-center gap-4 border-b border-neutral-100 pb-6">
         <div className="flex flex-col">
-            <span className="text-5xl font-bold text-neutral-900">4.8</span>
+            <span className="text-5xl font-medium text-neutral-900">4.8</span>
             <span className="text-xs text-neutral-500 font-medium">de 5.0</span>
         </div>
         <div className="flex flex-col gap-1">
@@ -56,7 +56,7 @@ export function ReviewsTab() {
             <div className="flex flex-col gap-1 w-full">
               {/* Nome e Data */}
               <div className="flex justify-between items-center">
-                <h4 className="font-bold text-neutral-900 text-sm">{review.name}</h4>
+                <h4 className="font-medium text-neutral-900 text-sm">{review.name}</h4>
                 <span className="text-xs text-neutral-400">{review.date}</span>
               </div>
 
