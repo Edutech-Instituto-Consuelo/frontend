@@ -4,11 +4,13 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 import { Loader, PrivateRoute } from "./layout";
+import CourseDetails from "./pages/CourseDetails";
 
 export default function App() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/curso/detalhes" element={<CourseDetails />} />
                 <Route element={<PrivateRoute />} loader={() => <Loader />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />

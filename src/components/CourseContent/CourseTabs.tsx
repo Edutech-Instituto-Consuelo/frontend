@@ -1,0 +1,61 @@
+import { useState } from "react";
+import { AboutTab } from "./tabs/AboutTab";
+import { ContentTab } from "./tabs/ContentTab";
+import { ReviewsTab } from "./tabs/ReviewsTab";
+
+export function CourseTabs() {
+  const [activeTab, setActiveTab] = useState<"about" | "content" | "reviews">("about");
+
+  return (
+    <div className="flex flex-col w-full">
+      
+      {/* Container "Cápsula" Cinza */}
+      <div className="inline-flex bg-neutral-100 p-1 rounded-full w-max mb-8">
+        
+        {/* Botão Sobre */}
+        <button
+          onClick={() => setActiveTab("about")}
+          className={`px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
+            activeTab === "about"
+              ? "bg-white text-neutral-900 shadow-sm" // Ativo
+              : "text-neutral-500 hover:text-neutral-900" // Inativo
+          }`}
+        >
+          Sobre
+        </button>
+
+        {/* Botão Conteúdo */}
+        <button
+          onClick={() => setActiveTab("content")}
+          className={`px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
+            activeTab === "content"
+              ? "bg-white text-neutral-900 shadow-sm"
+              : "text-neutral-500 hover:text-neutral-900"
+          }`}
+        >
+          Conteúdo
+        </button>
+
+        {/* Botão Avaliações */}
+        <button
+          onClick={() => setActiveTab("reviews")}
+          className={`px-6 py-1.5 rounded-full text-sm font-medium transition-all ${
+            activeTab === "reviews"
+              ? "bg-white text-neutral-900 shadow-sm"
+              : "text-neutral-500 hover:text-neutral-900"
+          }`}
+        >
+          Avaliações
+        </button>
+      </div>
+
+      {/* Renderização do Conteúdo */}
+      <div>
+        {activeTab === "about" && <AboutTab />}
+        {activeTab === "content" && <ContentTab />}
+        {activeTab === "reviews" && <ReviewsTab />}
+      </div>
+
+    </div>
+  );
+}
