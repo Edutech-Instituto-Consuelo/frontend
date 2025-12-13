@@ -1,7 +1,7 @@
 import { basedPathProtected } from "@/pages/Layout/PrivateRoute";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaPlayCircle, FaLock } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Mock de dados (Simulando o Backend)
 const modulesMock = [
@@ -95,7 +95,7 @@ export function ContentTab() {
               {isOpen && (
                 <div className="border-t border-neutral-200 divide-y divide-neutral-100">
                   {module.lessons.map((lesson) => (
-                    <div key={lesson.id} className="p-4 pl-6 flex items-center justify-between hover:bg-neutral-50 transition-colors group cursor-pointer bg-white">
+                    <Link to={"aulas?"+lesson.id} key={lesson.id} className="p-4 pl-6 flex items-center justify-between hover:bg-neutral-50 transition-colors group cursor-pointer bg-white">
                       
                       <div className="flex items-center gap-4">
                         <FaPlayCircle className="text-neutral-300 group-hover:text-neutral-500 text-xl shrink-0" />
@@ -117,7 +117,7 @@ export function ContentTab() {
                          </span>
                       </div>
 
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
