@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { RegisterHeader } from "./components/RegisterHeader";
 
 // 1. IMPORTANDO A LÓGICA (HOOK)
@@ -12,8 +11,6 @@ import { TermsModal } from "./components/TermsModal";
 import { LoginLink } from "./components/LoginLink";
 
 export default function Register() {
-  const navigate = useNavigate();
-
   // Estado local apenas para o Modal de Termos
   const [showTermsModal, setShowTermsModal] = useState(false);
 
