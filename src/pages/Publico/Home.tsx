@@ -7,19 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Hero from "@/components/Hero";
 import { useEffect, useState } from "react";
 import { api, catchCustom } from "@/services/api";
-
-interface ICursos {
-  id: number;
-  url_image: string | null;
-  titulo: string;
-  id_instrutor: number;  
-  instrutor: string;
-  id_nivel: number;  
-  nivel: string;
-  avaliacao: number; 
-  quantidade_avaliacoes: number; 
-  preco: number; 
-}
+import type { ICursos } from "@/interfaces/cursos";
 
 export default function Home() {
   const [cursos, setCursos] = useState<ICursos[]>([]);
@@ -27,7 +15,7 @@ export default function Home() {
 
   const buscarCursos = async () => {
     try {
-      const response = await api.get({ url: "/courses/" });
+      const response = await api.get({ url: "/courses/", hiddenToast: true });
 
       setCursos(response.data);
     } catch (error) {

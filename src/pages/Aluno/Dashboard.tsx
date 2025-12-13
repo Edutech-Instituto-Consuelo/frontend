@@ -12,7 +12,7 @@ export default function Dashboard() {
 
   const buscarMatriculas = async () => {
     try {
-        const response = await api.get({ url: `/enrollments` });
+        const response = await api.get({ url: `/enrollments`, hiddenToast: true });
         setMatriculas(response.data);
     } catch (error) {
         catchCustom(error);
