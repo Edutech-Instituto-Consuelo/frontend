@@ -5,8 +5,11 @@ import { Button } from "@/components/Button";
 import { Input } from "@/components/Form/Input";
 import { loginSchema, type LoginFormData } from "../schemas/loginSchema";
 import { ContainerInputs } from "@/components/Form/ContainerInputs";
+import { catchCustom } from "@/services/api";
+import { useUser } from "@/hooks/useUser";
 
 export function LoginForm() {
+  const { login } = useUser();
   const navigate = useNavigate();
 
   const {
@@ -18,10 +21,12 @@ export function LoginForm() {
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    console.log("Login enviado:", data);
-    // Isso aqui finge que o Backend respondeu "OK" depois de 1 segundo
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    navigate("/");
+    try {
+      await login(data);
+      navigate("/");
+    } catch (error) {
+      catchCustom(error);
+    }
   };
 
   const formErrors = errors as unknown as Record<string, Record<string, string>>;
@@ -42,12 +47,12 @@ export function LoginForm() {
 
         <div className="relative">
           <Input
-            id="password"
+            id="senha"
             type="password"
             label="Senha"
             placeholder="••••••••"
             autoComplete="current-password"
-            {...register("password")}
+            {...register("senha")}
             errors={formErrors}
           />
 
