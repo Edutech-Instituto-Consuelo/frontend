@@ -1,5 +1,19 @@
 # PRD – Plataforma Educacional | Instituto Consuelo
 
+## Documentação completa
+https://www.notion.so/Front-End-2a96fc3e740f801da3ace036fd9c7573
+### O que tem nesse link:
+ - Explicações sobre o projeto
+ - Dores
+ - Personas
+ - Overview do Projeto
+ - Membros do Squad
+ - Link da prototipação do Figma
+ - Link de apresentação
+ - Manual de marca do Instituto Consuelo
+ - Links do GitHub (descritiva do projeto e projeto)
+ - Link funcional do site
+
 ## 1. Visão Geral
 A Plataforma Educacional Tech do Instituto Consuelo é uma plataforma web de educação online
 com foco em inclusão social e acesso à tecnologia.  
