@@ -2,9 +2,9 @@ export interface Curso {
   id: number;
   titulo: string;
   instrutor: string;
-  imagem: string;
+  url_image: string;
   avaliacao: number;
-  numeroAvaliacoes: number;
+  quantidade_avaliacoes: number;
   preco: number; 
 }
 
@@ -13,9 +13,9 @@ const cursosPopulares: Curso[] = [
         id: 1,
         titulo: "Bootcamp FullStack Java + React",
         instrutor: "Guilherme Clemente",
-        imagem: "https://wordpress-cms-gc-prod-assets.quero.space/uploads/2021/07/Cursos-de-faculdade.jpg",
+        url_image: "https://wordpress-cms-gc-prod-assets.quero.space/uploads/2021/07/Cursos-de-faculdade.jpg",
         avaliacao: 4.8,
-        numeroAvaliacoes: 2341,
+        quantidade_avaliacoes: 2341,
         preco: 49.99
     },
 
@@ -23,9 +23,9 @@ const cursosPopulares: Curso[] = [
         id: 2,
         titulo: "Desenvolvimento Mobile",
         instrutor: "Matheus Viana",
-        imagem: "https://www.cursosrapidosgratis.com.br/site/seo/img/cursos-online.jpg",
+        url_image: "https://www.cursosrapidosgratis.com.br/site/seo/img/cursos-online.jpg",
         avaliacao: 4.7,
-        numeroAvaliacoes: 2094,
+        quantidade_avaliacoes: 2094,
         preco: 0
 
     },
@@ -34,9 +34,9 @@ const cursosPopulares: Curso[] = [
         id: 3,
         titulo: "Python para Iniciantes",
         instrutor: "Caroliny Gonçalves",
-        imagem: "https://concursossc.com.br/wp-content/uploads/2023/03/cursos-profissionalizantes-gratuitos.jpg",
+        url_image: "https://concursossc.com.br/wp-content/uploads/2023/03/cursos-profissionalizantes-gratuitos.jpg",
         avaliacao: 4.9,
-        numeroAvaliacoes: 3210,
+        quantidade_avaliacoes: 3210,
         preco: 59.99
     }
 

@@ -3,14 +3,14 @@ import { useLocation, Navigate } from "react-router-dom";
 import { Layout } from "./Layout";
 import { Loader } from "./Loader";
 
+export const basedPathProtected = ["/instrutor", "/aluno", "/admin"];
+
 export function PrivateRoute() {
     const { user, loading, isAuthenticated } = useUser();
     const role = user?.tipo_usuario;
 
     const from = useLocation().pathname;
     const roleBasedPath = from.split("/")[1] || "/";
-    
-    const basedPathProtected = ["/instrutor", "/aluno", "/admin"];
 
     if (loading)
         return <Loader />;

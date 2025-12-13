@@ -1,19 +1,9 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/Card"; 
-
-// Definição da interface Course e CoursesGridProps
-interface Course {
-  id: number;
-  title: string;
-  author: string;
-  rating: number;
-  reviews: number;
-  price: number;
-  image: string;
-}
+import type { ICursos } from "@/interfaces/cursos";
 
 interface CoursesGridProps {
-  courses: Course[];
+  courses: ICursos[];
 }
 
 export default function CoursesGrid({ courses }: CoursesGridProps) {
@@ -24,12 +14,12 @@ export default function CoursesGrid({ courses }: CoursesGridProps) {
           <Card 
             className="h-full transition-all duration-300 hover:-translate-y-1"
           >
-            <Card.Image src={course.image} alt={course.title} />
+            <Card.Image src={course.url_image||""} alt={course.titulo} />
             <Card.Body>
-              <Card.Title>{course.title}</Card.Title>
-              <Card.Author>{course.author}</Card.Author>
-              <Card.Rating rating={course.rating} reviews={course.reviews} />
-              <Card.Price value={course.price} />
+              <Card.Title>{course.titulo}</Card.Title>
+              <Card.Author>{course.instrutor}</Card.Author>
+              <Card.Rating rating={course.avaliacao} reviews={course.quantidade_avaliacoes} />
+              <Card.Price value={course.preco} />
             </Card.Body>
           </Card>
         </Link>

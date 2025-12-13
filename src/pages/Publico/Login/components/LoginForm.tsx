@@ -56,7 +56,7 @@ export function LoginForm() {
             errors={formErrors}
           />
 
-          <Link to="/forgot-password" className="link text-sm absolute right-0 top-0">
+          <Link to="/recuperar-senha" className="link text-sm absolute right-0 top-0">
             Esqueceu sua senha?
           </Link>
         </div>
