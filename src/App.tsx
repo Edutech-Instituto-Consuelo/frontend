@@ -40,6 +40,7 @@ export default function App() {
                     <Route path="/aluno">
                         <Route index element={<Navigate to={"/aluno/cursos"} />} />
 
+                        <Route path="/aluno/explorar" element={<Explore />} />
                         <Route path="/aluno/cursos" element={<DashboardAluno />} />
                         <Route path="/aluno/cursos/:id" element={<CourseDetails />} />
                         <Route path="/aluno/cursos/:id/aulas" element={<PaginaEmConstrucao />} />
