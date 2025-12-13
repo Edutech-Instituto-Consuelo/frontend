@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { RegisterHeader } from "./components/RegisterHeader";
 
 // 1. IMPORTANDO A LÓGICA (HOOK)
@@ -9,12 +8,9 @@ import { useRegisterForm } from "./hooks/useRegisterForm";
 import { RegisterForm } from "./components/RegisterForm";
 import { SuccessMessage } from "./components/SuccessMessage";
 import { TermsModal } from "./components/TermsModal";
-import { TeacherModal } from "./components/TeacherModal";
 import { LoginLink } from "./components/LoginLink";
 
 export default function Register() {
-  const navigate = useNavigate();
-
   // Estado local apenas para o Modal de Termos
   const [showTermsModal, setShowTermsModal] = useState(false);
 
@@ -22,8 +18,6 @@ export default function Register() {
   const {
     form,
     isSuccess,
-    showTeacherModal,
-    setShowTeacherModal,
     onSubmit
   } = useRegisterForm();
 
@@ -59,14 +53,6 @@ export default function Register() {
             // Atualiza o valor no formulário através do objeto 'form' que veio do hook
             form.setValue("acceptedTerms", true, { shouldValidate: true });
             setShowTermsModal(false);
-        }}
-      />
-
-      <TeacherModal
-        isOpen={showTeacherModal}
-        onClose={() => {
-          setShowTeacherModal(false);
-          navigate("/"); // Redireciona ao fechar o aviso do professor
         }}
       />
     </div>
