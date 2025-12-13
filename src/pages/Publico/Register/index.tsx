@@ -9,7 +9,6 @@ import { useRegisterForm } from "./hooks/useRegisterForm";
 import { RegisterForm } from "./components/RegisterForm";
 import { SuccessMessage } from "./components/SuccessMessage";
 import { TermsModal } from "./components/TermsModal";
-import { TeacherModal } from "./components/TeacherModal";
 import { LoginLink } from "./components/LoginLink";
 
 export default function Register() {
@@ -22,8 +21,6 @@ export default function Register() {
   const {
     form,
     isSuccess,
-    showTeacherModal,
-    setShowTeacherModal,
     onSubmit
   } = useRegisterForm();
 
@@ -59,14 +56,6 @@ export default function Register() {
             // Atualiza o valor no formulário através do objeto 'form' que veio do hook
             form.setValue("acceptedTerms", true, { shouldValidate: true });
             setShowTermsModal(false);
-        }}
-      />
-
-      <TeacherModal
-        isOpen={showTeacherModal}
-        onClose={() => {
-          setShowTeacherModal(false);
-          navigate("/"); // Redireciona ao fechar o aviso do professor
         }}
       />
     </div>

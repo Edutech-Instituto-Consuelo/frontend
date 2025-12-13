@@ -10,13 +10,11 @@ export type { RegisterFormData };
 
 export function useRegisterForm() {
   const [isSuccess, setIsSuccess] = useState(false);
-  const [showTeacherModal, setShowTeacherModal] = useState(false);
 
   // Configuração do React Hook Form usando o schema importado
   const form = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
-      role: "student",
       acceptedTerms: false,
     },
   });
@@ -37,8 +35,6 @@ export function useRegisterForm() {
   return {
     form,
     isSuccess,
-    showTeacherModal,
-    setShowTeacherModal,
     onSubmit: form.handleSubmit(onSubmit), 
   };
 }
