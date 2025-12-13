@@ -5,9 +5,40 @@ import { BaseInput } from "@/components/Form";
 import { Button } from "@/components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import Hero from "@/components/Hero";
+import { useEffect, useState } from "react";
+import { api, catchCustom } from "@/services/api";
+
+interface ICursos {
+  id: number;
+  url_image: string | null;
+  titulo: string;
+  id_instrutor: number;  
+  instrutor: string;
+  id_nivel: number;  
+  nivel: string;
+  avaliacao: number; 
+  quantidade_avaliacoes: number; 
+  preco: number; 
+}
 
 export default function Home() {
+  const [cursos, setCursos] = useState<ICursos[]>([]);
   const navigate = useNavigate();
+
+  const buscarCursos = async () => {
+    try {
+      const response = await api.get({ url: "/courses/" });
+
+      setCursos(response.data);
+    } catch (error) {
+      catchCustom(error);
+    }
+  };
+
+  useEffect(() => {
+    buscarCursos();
+  }, []);
+  console.log(cursos);
 
   function handleSubmit(event: any) {
     event.preventDefault();
@@ -34,11 +65,11 @@ export default function Home() {
           {cursosPopulares.map((curso) => (
             <Link to={`/cursos/${curso.id}`} key={curso.id}>
               <Card key={curso.id} className="transition-all duration-300 hover:-translate-y-1">
-                <Card.Image src={curso.imagem} alt={curso.titulo} />
+                <Card.Image src={curso.url_image||""} alt={curso.titulo} />
                 <Card.Body>
                   <Card.Title>{curso.titulo}</Card.Title>
                   <Card.Author>{curso.instrutor}</Card.Author>
-                  <Card.Rating rating={curso.avaliacao} reviews={curso.numeroAvaliacoes} />
+                  <Card.Rating rating={curso.avaliacao} reviews={curso.quantidade_avaliacoes} />
                   <Card.Price value={curso.preco} />
                 </Card.Body>
               </Card>

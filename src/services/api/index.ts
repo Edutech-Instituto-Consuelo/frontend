@@ -84,4 +84,5 @@ export function catchCustom(err: unknown) {
     const error = err as AxiosError<{ data: unknown, message: string }>;
     
     toast.error(error.response?.data?.message || error.message);
+    throw err;
 }
