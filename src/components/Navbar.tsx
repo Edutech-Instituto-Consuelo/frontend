@@ -18,7 +18,7 @@ export default function Navbar() {
 
     const links = {
         aluno: [
-            { label: "Explorar", to: "/explorar" },
+            { label: "Explorar", to: "/aluno/explorar" },
             { label: "Atividades", to: "/aluno/atividades" },
         ],
 
