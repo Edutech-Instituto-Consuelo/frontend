@@ -1,5 +1,7 @@
+import { basedPathProtected } from "@/pages/Layout/PrivateRoute";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaPlayCircle, FaLock } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 // Mock de dados (Simulando o Backend)
 const modulesMock = [
@@ -35,6 +37,9 @@ const modulesMock = [
 ];
 
 export function ContentTab() {
+  const location = useLocation();
+  const isProtectedRoute = basedPathProtected.some(path => location.pathname.startsWith(path));
+
   // Começamos com o módulo 1 aberto para o usuário ver que é clicável
   const [openModules, setOpenModules] = useState<number[]>([1]);
 
@@ -102,7 +107,7 @@ export function ContentTab() {
                       <div className="flex items-center gap-4">
                          {lesson.isFree ? (
                            <span className="text-[10px] font-bold text-neutral-800 border border-neutral-400 bg-white px-2 py-0.5 rounded uppercase tracking-wide">
-                             Grátis
+                             {isProtectedRoute ? "Disponível" : "Grátis"}
                            </span>
                          ) : (
                            <FaLock className="text-neutral-300 text-xs" />

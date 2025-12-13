@@ -41,7 +41,7 @@ export default function App() {
                         <Route index element={<Navigate to={"/aluno/cursos"} />} />
 
                         <Route path="/aluno/cursos" element={<DashboardAluno />} />
-                        <Route path="/aluno/cursos/:id" element={<PaginaEmConstrucao />} />
+                        <Route path="/aluno/cursos/:id" element={<CourseDetails />} />
                         <Route path="/aluno/cursos/:id/aulas" element={<PaginaEmConstrucao />} />
                         <Route path="/aluno/certificados" element={<PaginaEmConstrucao />} />
                     </Route>

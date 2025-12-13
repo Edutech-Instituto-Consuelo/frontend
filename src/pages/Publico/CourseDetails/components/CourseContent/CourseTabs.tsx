@@ -2,9 +2,14 @@ import { useState } from "react";
 import { AboutTab } from "./tabs/AboutTab";
 import { ContentTab } from "./tabs/ContentTab";
 import { ReviewsTab } from "./tabs/ReviewsTab";
+import { basedPathProtected } from "@/pages/Layout/PrivateRoute";
+import { useLocation } from "react-router-dom";
 
 export function CourseTabs() {
-  const [activeTab, setActiveTab] = useState<"about" | "content" | "reviews">("about");
+  const location = useLocation();
+  const isProtectedRoute = basedPathProtected.some(path => location.pathname.startsWith(path));
+
+  const [activeTab, setActiveTab] = useState<"about" | "content" | "reviews">(isProtectedRoute ? "content" : "about");
 
   return (
     <div className="flex flex-col w-full">

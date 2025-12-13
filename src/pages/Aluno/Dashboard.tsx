@@ -4,6 +4,7 @@ import { Button } from "@/components/Button";
 import { useUser } from "@/hooks/useUser";
 import { api, catchCustom } from "@/services/api";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const [matriculas, setMatriculas] = useState();
@@ -33,17 +34,19 @@ export default function Dashboard() {
 
             <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 animate-fade-in">
                 { cursosMatriculados.map((curso) =>(
-                    <Card key={curso.id} className="transition-all duration-300 hover:-translate-y-1">
-                        <Card.Image src={curso.url_image} alt={curso.titulo} />
-                        <Card.Body>
-                            <Card.Title>{curso.titulo}</Card.Title>
-                            <Card.Author>{curso.instrutor}</Card.Author>
-                            <Card.Progress progress={curso.progresso} progressText={curso.progressoTexto}></Card.Progress>
-                            <Button variant="primary" fullWidth className="mt-4">
-                                Continue Aprendendo
-                            </Button>
-                        </Card.Body>
-                    </Card>
+                    <Link to={`/aluno/cursos/${curso.id}`}>
+                        <Card key={curso.id} className="transition-all duration-300 hover:-translate-y-1">
+                            <Card.Image src={curso.url_image} alt={curso.titulo} />
+                            <Card.Body>
+                                <Card.Title>{curso.titulo}</Card.Title>
+                                <Card.Author>{curso.instrutor}</Card.Author>
+                                <Card.Progress progress={curso.progresso} progressText={curso.progressoTexto}></Card.Progress>
+                                <Button variant="primary" fullWidth className="mt-4">
+                                    Continue Aprendendo
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 ))}
             </div>
 
